@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 ProjetFinalRaisonnement - IEEE TETC 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b); color: #f8fafc; min-height: 100vh; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        .header { background: rgba(30, 41, 59, 0.9); border-radius: 15px; padding: 25px 30px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo h1 { font-size: 28px; color: #60a5fa; }
+        .logo .subtitle { color: #94a3b8; font-size: 14px; }
+        .status-badge { padding: 8px 16px; background: rgba(255,255,255,0.05); border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
+        .status-badge .dot { width: 10px; height: 10px; border-radius: 50%; background: #10b981; }
+        
+        .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 1024px) { .main-grid { grid-template-columns: 1fr; } }
+        
+        .panel { background: rgba(30, 41, 59, 0.9); border-radius: 15px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); }
+        .panel h2 { color: #60a5fa; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid rgba(96, 165, 250, 0.3); display: flex; align-items: center; gap: 10px; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #cbd5e1; }
+        .form-control { width: 100%; padding: 12px; background: rgba(15, 23, 42, 0.8); border: 2px solid #475569; border-radius: 8px; color: white; font-size: 16px; }
+        .form-control:focus { border-color: #3b82f6; outline: none; }
+        
+        .btn { padding: 14px 28px; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-primary { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3); }
+        .btn-success { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .btn-warning { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .btn-danger { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
+        .btn-full { width: 100%; justify-content: center; }
+        
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0; }
+        .metric-card { background: rgba(15, 23, 42, 0.8); border-radius: 10px; padding: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .metric-value { font-size: 24px; font-weight: 700; color: #60a5fa; }
+        .metric-label { font-size: 12px; color: #94a3b8; text-transform: uppercase; }
+        
+        .log-container { background: rgba(15, 23, 42, 0.95); border-radius: 10px; padding: 15px; height: 200px; overflow-y: auto; font-family: monospace; font-size: 13px; }
+        .log-entry { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .log-time { color: #64748b; margin-right: 10px; }
+        
+        .progress-container { margin: 20px 0; }
+        .progress-bar { width: 100%; height: 8px; background: #475569; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #10b981); transition: width 0.5s; width: 0%; }
+        
+        .file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; margin: 20px 0; }
+        .file-card { background: rgba(15, 23, 42, 0.8); border-radius: 10px; padding: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; }
+        .file-card:hover { border-color: #3b82f6; transform: translateY(-2px); }
+        .file-icon { font-size: 28px; color: #60a5fa; }
+        .file-name { font-size: 12px; margin-top: 8px; word-break: break-all; }
+        
+        .design-card { background: rgba(15, 23, 42, 0.8); border-radius: 10px; padding: 15px; margin: 10px 0; border-left: 4px solid #3b82f6; }
+        .design-card.recommended { border-left-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+        .design-title { font-weight: 600; color: #60a5fa; }
+        .design-metrics { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 8px; font-size: 13px; color: #94a3b8; }
+        .design-metrics span { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; }
+        
+        .footer { margin-top: 40px; padding: 30px; background: rgba(30, 41, 59, 0.9); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        .features { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+        .feature-tag { padding: 6px 14px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 50px; font-size: 13px; color: #93c5fd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🚀 ProjetFinalRaisonnement</h1>
+                <div class="subtitle">LLM-NAS AutoCoDesign | IEEE TETC 2026</div>
+            </div>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div class="status-badge"><span class="dot"></span> <span id="apiStatus">Connected</span></div>
+                <div class="status-badge"><span class="dot"></span> <span id="designCount">0 designs</span></div>
+            </div>
+        </header>
+        
+        <div class="main-grid">
+            <!-- Panel gauche - Spécifications -->
+            <div class="panel">
+                <h2><i class="fas fa-cogs"></i> System Specifications</h2>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-microchip"></i> Application Domain</label>
+                    <select id="domain" class="form-control">
+                        <option value="medical">🏥 Medical (ECG)</option>
+                        <option value="industrial" selected>🏭 Industrial (Vibration)</option>
+                        <option value="iot">🌐 IoT (Gesture)</option>
+                        <option value="automotive">🚗 Automotive (Detection)</option>
+                        <option value="robotics">🤖 Robotics (SLAM)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-microchip"></i> Target MCU</label>
+                    <select id="mcu" class="form-control">
+                        <option value="riscv_rv32x">RISC-V with RV32X ⚡</option>
+                        <option value="riscv_base">RISC-V (Base)</option>
+                        <option value="arm_m4">ARM Cortex-M4</option>
+                        <option value="arm_m0">ARM Cortex-M0</option>
+                        <option value="stm32">STM32</option>
+                        <option value="esp32">ESP32</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-sliders-h"></i> Constraints</label>
+                    <div class="slider-group" style="background:rgba(15,23,42,0.8);padding:15px;border-radius:10px;margin-bottom:10px;">
+                        <div style="display:flex;justify-content:space-between;">
+                            <span>Max Latency</span>
+                            <span id="latencyValue" style="color:#60a5fa;">20 ms</span>
+                        </div>
+                        <input type="range" id="latency" min="1" max="100" value="20" style="width:100%;">
+                    </div>
+                    <div class="slider-group" style="background:rgba(15,23,42,0.8);padding:15px;border-radius:10px;margin-bottom:10px;">
+                        <div style="display:flex;justify-content:space-between;">
+                            <span>Memory Budget</span>
+                            <span id="memoryValue" style="color:#60a5fa;">64 KB</span>
+                        </div>
+                        <input type="range" id="memory" min="8" max="256" value="64" step="8" style="width:100%;">
+                    </div>
+                    <div class="slider-group" style="background:rgba(15,23,42,0.8);padding:15px;border-radius:10px;">
+                        <div style="display:flex;justify-content:space-between;">
+                            <span>Power Budget</span>
+                            <span id="powerValue" style="color:#60a5fa;">50 mW</span>
+                        </div>
+                        <input type="range" id="power" min="10" max="200" value="50" step="5" style="width:100%;">
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary btn-full" id="generateBtn"><i class="fas fa-rocket"></i> Run Meta-Reasoning</button>
+                
+                <div style="display:flex;gap:10px;margin-top:15px;flex-wrap:wrap;">
+                    <button class="btn btn-success" id="designsBtn" style="flex:1;"><i class="fas fa-list"></i> Designs</button>
+                    <button class="btn btn-warning" id="generateCodeBtn" style="flex:1;"><i class="fas fa-code"></i> Generate</button>
+                </div>
+            </div>
+            
+            <!-- Panel droit - Résultats -->
+            <div class="panel">
+                <h2><i class="fas fa-sync-alt"></i> Reasoning Results</h2>
+                
+                <div class="progress-container">
+                    <div style="display:flex;justify-content:space-between;">
+                        <span>Progress</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+                </div>
+                
+                <div class="log-container" id="logContainer">
+                    <div class="log-entry"><span class="log-time">[System]</span> Initialized. Ready for reasoning.</div>
+                </div>
+                
+                <div id="selectedDesign" style="margin-top:15px;"></div>
+                
+                <div class="metrics-grid" id="metricsGrid"></div>
+                
+                <button class="btn btn-success btn-full" id="downloadBtn" disabled>
+                    <i class="fas fa-download"></i> Download Project
+                </button>
+            </div>
+        </div>
+        
+        <!-- Panel des designs -->
+        <div class="panel" id="designsPanel" style="display:none;margin-top:20px;">
+            <h2><i class="fas fa-microchip"></i> Available Designs</h2>
+            <div id="designsList"></div>
+        </div>
+        
+        <footer class="footer">
+            <div class="features">
+                <span class="feature-tag">21,600 designs explorés</span>
+                <span class="feature-tag">373,128 paramètres</span>
+                <span class="feature-tag">3 STRICT requirements</span>
+                <span class="feature-tag">RV32X extensions</span>
+                <span class="feature-tag">Méta-raisonnement</span>
+                <span class="feature-tag">Monitoring post-déploiement</span>
+            </div>
+            <div style="color: #94a3b8; font-size: 14px;">
+                ProjetFinalRaisonnement | IEEE Transactions on Emerging Topics in Computing (TETC) 2026
+            </div>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
