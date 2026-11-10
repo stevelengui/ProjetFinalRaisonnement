@@ -1,0 +1,279 @@
+{
+  "experiment": "E7",
+  "rq": "Cross-RQ",
+  "timestamp": "2026-09-18T09:41:57.113626",
+  "configs_count": 11,
+  "scenarios_per_config": 30,
+  "analysis": {
+    "all_metrics": {
+      "A0_FULL": {
+        "ablation_id": "A0_FULL",
+        "ablation_name": "Full System",
+        "DCR": 0.8333,
+        "CVR": 0.0667,
+        "Regret": 0.0789,
+        "AvgCost": 0.3466,
+        "TotalCost": 10.3986,
+        "HFInvocations": 12,
+        "HFRate": 0.4,
+        "SufficiencyError": 0.0564,
+        "Restoration": 0.9215,
+        "Auditability": 0.9496,
+        "Overall": 0.9395
+      },
+      "A1_NO_ADAPTIVE": {
+        "ablation_id": "A1_NO_ADAPTIVE",
+        "ablation_name": "No Adaptive Selection",
+        "DCR": 0.7,
+        "CVR": 0.0667,
+        "Regret": 0.4568,
+        "AvgCost": 0.2042,
+        "TotalCost": 6.1258,
+        "HFInvocations": 0,
+        "HFRate": 0.0,
+        "SufficiencyError": 0.0607,
+        "Restoration": 0.9231,
+        "Auditability": 0.9515,
+        "Overall": 0.6235
+      },
+      "A2_NO_UNCERTAINTY": {
+        "ablation_id": "A2_NO_UNCERTAINTY",
+        "ablation_name": "No Uncertainty Handling",
+        "DCR": 0.6333,
+        "CVR": 0.2,
+        "Regret": 0.381,
+        "AvgCost": 0.3521,
+        "TotalCost": 10.5635,
+        "HFInvocations": 18,
+        "HFRate": 0.6,
+        "SufficiencyError": 0.2093,
+        "Restoration": 0.9216,
+        "Auditability": 0.9499,
+        "Overall": 0.4357
+      },
+      "A3_NO_PROVENANCE": {
+        "ablation_id": "A3_NO_PROVENANCE",
+        "ablation_name": "No Provenance Tracking",
+        "DCR": 0.7,
+        "CVR": 0.1333,
+        "Regret": 0.3077,
+        "AvgCost": 0.3502,
+        "TotalCost": 10.5069,
+        "HFInvocations": 12,
+        "HFRate": 0.4,
+        "SufficiencyError": 0.16,
+        "Restoration": 0.9202,
+        "Auditability": 0.6978,
+        "Overall": 0.5818
+      },
+      "A4_FIXED_CONTRACT": {
+        "ablation_id": "A4_FIXED_CONTRACT",
+        "ablation_name": "Fixed Contract",
+        "DCR": 0.4667,
+        "CVR": 0.5,
+        "Regret": 0.5324,
+        "AvgCost": 0.3507,
+        "TotalCost": 10.5212,
+        "HFInvocations": 17,
+        "HFRate": 0.5667,
+        "SufficiencyError": 0.0601,
+        "Restoration": 0.918,
+        "Auditability": 0.8501,
+        "Overall": 0
+      },
+      "A5_NO_RELIABILITY": {
+        "ablation_id": "A5_NO_RELIABILITY",
+        "ablation_name": "No Reliability Reasoning",
+        "DCR": 0.6667,
+        "CVR": 0.3,
+        "Regret": 0.4575,
+        "AvgCost": 0.3568,
+        "TotalCost": 10.7034,
+        "HFInvocations": 19,
+        "HFRate": 0.6333,
+        "SufficiencyError": 0.058,
+        "Restoration": 0.7223,
+        "Auditability": 0.946,
+        "Overall": 0.3656
+      },
+      "A6_NO_DOMAIN_SHIFT": {
+        "ablation_id": "A6_NO_DOMAIN_SHIFT",
+        "ablation_name": "No Domain-Shift Reasoning",
+        "DCR": 0.6,
+        "CVR": 0.0667,
+        "Regret": 0.4077,
+        "AvgCost": 0.3453,
+        "TotalCost": 10.3585,
+        "HFInvocations": 12,
+        "HFRate": 0.4,
+        "SufficiencyError": 0.0614,
+        "Restoration": 0.7739,
+        "Auditability": 0.9531,
+        "Overall": 0.5186
+      },
+      "A7_NO_SECURITY": {
+        "ablation_id": "A7_NO_SECURITY",
+        "ablation_name": "No Security Reasoning",
+        "DCR": 0.5667,
+        "CVR": 0.1667,
+        "Regret": 0.5004,
+        "AvgCost": 0.3518,
+        "TotalCost": 10.5528,
+        "HFInvocations": 18,
+        "HFRate": 0.6,
+        "SufficiencyError": 0.062,
+        "Restoration": 0.821,
+        "Auditability": 0.9471,
+        "Overall": 0.3648
+      },
+      "A8_NO_ASSURANCE": {
+        "ablation_id": "A8_NO_ASSURANCE",
+        "ablation_name": "No Assurance Trace",
+        "DCR": 0.8333,
+        "CVR": 0.2333,
+        "Regret": 0.3516,
+        "AvgCost": 0.3482,
+        "TotalCost": 10.4467,
+        "HFInvocations": 15,
+        "HFRate": 0.5,
+        "SufficiencyError": 0.0576,
+        "Restoration": 0.9181,
+        "Auditability": 0.599,
+        "Overall": 0.6338
+      },
+      "A9_NO_VALIDITY": {
+        "ablation_id": "A9_NO_VALIDITY",
+        "ablation_name": "No Validity Monitoring",
+        "DCR": 0.8333,
+        "CVR": 0.3,
+        "Regret": 0.3046,
+        "AvgCost": 0.3633,
+        "TotalCost": 10.8986,
+        "HFInvocations": 20,
+        "HFRate": 0.6667,
+        "SufficiencyError": 0.0605,
+        "Restoration": 0.8331,
+        "Auditability": 0.7955,
+        "Overall": 0.6092
+      },
+      "A10_NO_EVI": {
+        "ablation_id": "A10_NO_EVI",
+        "ablation_name": "No EVI Calculation",
+        "DCR": 0.7667,
+        "CVR": 0.1,
+        "Regret": 0.2563,
+        "AvgCost": 0.5133,
+        "TotalCost": 15.3992,
+        "HFInvocations": 20,
+        "HFRate": 0.6667,
+        "SufficiencyError": 0.0649,
+        "Restoration": 0.9231,
+        "Auditability": 0.9475,
+        "Overall": 0.7466
+      }
+    },
+    "comparisons": [
+      {
+        "ablated": "A4_FIXED_CONTRACT",
+        "baseline_score": 0.9395,
+        "ablated_score": 0,
+        "degradation": 0.9395,
+        "degradation_pct": 1.0,
+        "is_significant": true
+      },
+      {
+        "ablated": "A7_NO_SECURITY",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.3648,
+        "degradation": 0.5747,
+        "degradation_pct": 0.6117,
+        "is_significant": true
+      },
+      {
+        "ablated": "A5_NO_RELIABILITY",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.3656,
+        "degradation": 0.5739,
+        "degradation_pct": 0.6109,
+        "is_significant": true
+      },
+      {
+        "ablated": "A2_NO_UNCERTAINTY",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.4357,
+        "degradation": 0.5038,
+        "degradation_pct": 0.5362,
+        "is_significant": true
+      },
+      {
+        "ablated": "A6_NO_DOMAIN_SHIFT",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.5186,
+        "degradation": 0.4209,
+        "degradation_pct": 0.448,
+        "is_significant": true
+      },
+      {
+        "ablated": "A3_NO_PROVENANCE",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.5818,
+        "degradation": 0.3577,
+        "degradation_pct": 0.3807,
+        "is_significant": true
+      },
+      {
+        "ablated": "A9_NO_VALIDITY",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.6092,
+        "degradation": 0.3303,
+        "degradation_pct": 0.3516,
+        "is_significant": true
+      },
+      {
+        "ablated": "A1_NO_ADAPTIVE",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.6235,
+        "degradation": 0.316,
+        "degradation_pct": 0.3363,
+        "is_significant": true
+      },
+      {
+        "ablated": "A8_NO_ASSURANCE",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.6338,
+        "degradation": 0.3057,
+        "degradation_pct": 0.3254,
+        "is_significant": true
+      },
+      {
+        "ablated": "A10_NO_EVI",
+        "baseline_score": 0.9395,
+        "ablated_score": 0.7466,
+        "degradation": 0.1929,
+        "degradation_pct": 0.2053,
+        "is_significant": true
+      }
+    ],
+    "critical_mechanisms": [
+      "A4_FIXED_CONTRACT",
+      "A7_NO_SECURITY",
+      "A5_NO_RELIABILITY",
+      "A2_NO_UNCERTAINTY",
+      "A6_NO_DOMAIN_SHIFT",
+      "A3_NO_PROVENANCE",
+      "A9_NO_VALIDITY",
+      "A1_NO_ADAPTIVE",
+      "A8_NO_ASSURANCE",
+      "A10_NO_EVI"
+    ],
+    "important_mechanisms": [],
+    "minor_mechanisms": [],
+    "summary": {
+      "baseline_score": 0.9395,
+      "num_ablations": 10,
+      "num_significant": 10,
+      "max_degradation": 0.9395,
+      "max_degradation_ablation": "A4_FIXED_CONTRACT"
+    }
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "experiment": "E2",
+  "rq": "RQ5",
+  "timestamp": "2026-09-18T09:41:56.543042",
+  "contracts_count": 2,
+  "perturbations_count": 5,
+  "total_events": 10,
+  "total_matches": 10,
+  "overall_match_rate": 1.0,
+  "perturbation_analysis": {
+    "P0": {
+      "class": "C0_nominal",
+      "expected": "continue",
+      "matches": 2,
+      "total": 2,
+      "match_rate": 1.0
+    },
+    "P1": {
+      "class": "C1_minor",
+      "expected": "calibrate",
+      "matches": 2,
+      "total": 2,
+      "match_rate": 1.0
+    },
+    "P2": {
+      "class": "C2_moderate",
+      "expected": "adapt",
+      "matches": 2,
+      "total": 2,
+      "match_rate": 1.0
+    },
+    "P3": {
+      "class": "C3_major",
+      "expected": "remap",
+      "matches": 2,
+      "total": 2,
+      "match_rate": 1.0
+    },
+    "P4": {
+      "class": "C4_structural",
+      "expected": "redesign",
+      "matches": 2,
+      "total": 2,
+      "match_rate": 1.0
+    }
+  },
+  "contract_results": [
+    {
+      "contract_id": "dep_ecg_001",
+      "design_id": "ecg_hybrid_8bit",
+      "domain": "medical",
+      "replay_result": {
+        "contract_id": "dep_ecg_001",
+        "design_id": "ecg_hybrid_8bit",
+        "events": [
+          {
+            "event_id": "replay_001",
+            "perturbation_id": "P0",
+            "perturbation_class": "C0_nominal",
+            "validity_after": true,
+            "selected_intervention": "continue",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.961,
+                "after": 0.961,
+                "delta_pct": 0.0
+              },
+              "latency_ms": {
+                "before": 8.2,
+                "after": 8.2,
+                "delta_pct": 0.0
+              },
+              "memory_kb": {
+                "before": 24.0,
+                "after": 24.0,
+                "delta_pct": 0.0
+              },
+              "energy_mj": {
+                "before": 2.8,
+                "after": 2.8,
+                "delta_pct": 0.0
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.92,
+                "delta_pct": 0.0
+              }
+            }
+          },
+          {
+            "event_id": "replay_002",
+            "perturbation_id": "P1",
+            "perturbation_class": "C1_minor",
+            "validity_after": true,
+            "selected_intervention": "calibrate",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.961,
+                "after": 0.9321699999999999,
+                "delta_pct": -3.000000000000002
+              },
+              "latency_ms": {
+                "before": 8.2,
+                "after": 8.856,
+                "delta_pct": 8.000000000000007
+              },
+              "memory_kb": {
+                "before": 24.0,
+                "after": 24.48,
+                "delta_pct": 2.0000000000000018
+              },
+              "energy_mj": {
+                "before": 2.8,
+                "after": 2.94,
+                "delta_pct": 5.000000000000004
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.8924,
+                "delta_pct": -3.0000000000000075
+              }
+            }
+          },
+          {
+            "event_id": "replay_003",
+            "perturbation_id": "P2",
+            "perturbation_class": "C2_moderate",
+            "validity_after": false,
+            "selected_intervention": "adapt",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.961,
+                "after": 0.8649,
+                "delta_pct": -9.999999999999996
+              },
+              "latency_ms": {
+                "before": 8.2,
+                "after": 9.839999999999998,
+                "delta_pct": 19.999999999999986
+              },
+              "memory_kb": {
+                "before": 24.0,
+                "after": 25.92,
+                "delta_pct": 8.000000000000007
+              },
+              "energy_mj": {
+                "before": 2.8,
+                "after": 3.2199999999999998,
+                "delta_pct": 15.0
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.8464,
+                "delta_pct": -8.0
+              }
+            }
+          },
+          {
+            "event_id": "replay_004",
+            "perturbation_id": "P3",
+            "perturbation_class": "C3_major",
+            "validity_after": false,
+            "selected_intervention": "remap",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.961,
+                "after": 0.7688,
+                "delta_pct": -19.999999999999993
+              },
+              "latency_ms": {
+                "before": 8.2,
+                "after": 11.479999999999999,
+                "delta_pct": 40.0
+              },
+              "memory_kb": {
+                "before": 24.0,
+                "after": 30.0,
+                "delta_pct": 25.0
+              },
+              "energy_mj": {
+                "before": 2.8,
+                "after": 3.6399999999999997,
+                "delta_pct": 30.0
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.782,
+                "delta_pct": -15.0
+              }
+            }
+          },
+          {
+            "event_id": "replay_005",
+            "perturbation_id": "P4",
+            "perturbation_class": "C4_structural",
+            "validity_after": false,
+            "selected_intervention": "redesign",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.961,
+                "after": 0.62465,
+                "delta_pct": -34.99999999999999
+              },
+              "latency_ms": {
+                "before": 8.2,
+                "after": 13.939999999999998,
+                "delta_pct": 69.99999999999999
+              },
+              "memory_kb": {
+                "before": 24.0,
+                "after": 36.0,
+                "delta_pct": 50.0
+              },
+              "energy_mj": {
+                "before": 2.8,
+                "after": 4.4799999999999995,
+                "delta_pct": 60.0
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.6900000000000001,
+                "delta_pct": -24.999999999999996
+              }
+            }
+          }
+        ],
+        "matches_count": 5,
+        "total_events": 5,
+        "match_rate": 1.0
+      },
+      "validity_envelope": {
+        "valid_perturbations": [
+          "P0",
+          "P1"
+        ],
+        "invalid_perturbations": [
+          "P2",
+          "P3",
+          "P4"
+        ],
+        "validity_envelope_size": 2,
+        "total_perturbations": 5
+      }
+    },
+    {
+      "contract_id": "dep_vibration_001",
+      "design_id": "vibration_hybrid_8bit",
+      "domain": "industrial",
+      "replay_result": {
+        "contract_id": "dep_vibration_001",
+        "design_id": "vibration_hybrid_8bit",
+        "events": [
+          {
+            "event_id": "replay_001",
+            "perturbation_id": "P0",
+            "perturbation_class": "C0_nominal",
+            "validity_after": true,
+            "selected_intervention": "continue",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.958,
+                "after": 0.958,
+                "delta_pct": 0.0
+              },
+              "latency_ms": {
+                "before": 6.8,
+                "after": 6.8,
+                "delta_pct": 0.0
+              },
+              "memory_kb": {
+                "before": 32.0,
+                "after": 32.0,
+                "delta_pct": 0.0
+              },
+              "energy_mj": {
+                "before": 2.2,
+                "after": 2.2,
+                "delta_pct": 0.0
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.92,
+                "delta_pct": 0.0
+              }
+            }
+          },
+          {
+            "event_id": "replay_002",
+            "perturbation_id": "P1",
+            "perturbation_class": "C1_minor",
+            "validity_after": true,
+            "selected_intervention": "calibrate",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.958,
+                "after": 0.92926,
+                "delta_pct": -2.9999999999999987
+              },
+              "latency_ms": {
+                "before": 6.8,
+                "after": 7.344,
+                "delta_pct": 8.000000000000007
+              },
+              "memory_kb": {
+                "before": 32.0,
+                "after": 32.64,
+                "delta_pct": 2.0000000000000018
+              },
+              "energy_mj": {
+                "before": 2.2,
+                "after": 2.3100000000000005,
+                "delta_pct": 5.000000000000014
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.8924,
+                "delta_pct": -3.0000000000000075
+              }
+            }
+          },
+          {
+            "event_id": "replay_003",
+            "perturbation_id": "P2",
+            "perturbation_class": "C2_moderate",
+            "validity_after": false,
+            "selected_intervention": "adapt",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.958,
+                "after": 0.8622,
+                "delta_pct": -10.0
+              },
+              "latency_ms": {
+                "before": 6.8,
+                "after": 8.16,
+                "delta_pct": 20.000000000000004
+              },
+              "memory_kb": {
+                "before": 32.0,
+                "after": 34.56,
+                "delta_pct": 8.000000000000007
+              },
+              "energy_mj": {
+                "before": 2.2,
+                "after": 2.53,
+                "delta_pct": 14.999999999999982
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.8464,
+                "delta_pct": -8.0
+              }
+            }
+          },
+          {
+            "event_id": "replay_004",
+            "perturbation_id": "P3",
+            "perturbation_class": "C3_major",
+            "validity_after": false,
+            "selected_intervention": "remap",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.958,
+                "after": 0.7664,
+                "delta_pct": -20.0
+              },
+              "latency_ms": {
+                "before": 6.8,
+                "after": 9.52,
+                "delta_pct": 40.0
+              },
+              "memory_kb": {
+                "before": 32.0,
+                "after": 40.0,
+                "delta_pct": 25.0
+              },
+              "energy_mj": {
+                "before": 2.2,
+                "after": 2.8600000000000003,
+                "delta_pct": 30.000000000000004
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.782,
+                "delta_pct": -15.0
+              }
+            }
+          },
+          {
+            "event_id": "replay_005",
+            "perturbation_id": "P4",
+            "perturbation_class": "C4_structural",
+            "validity_after": false,
+            "selected_intervention": "redesign",
+            "matches_expected": true,
+            "metrics_change": {
+              "accuracy": {
+                "before": 0.958,
+                "after": 0.6227,
+                "delta_pct": -34.99999999999999
+              },
+              "latency_ms": {
+                "before": 6.8,
+                "after": 11.559999999999999,
+                "delta_pct": 69.99999999999999
+              },
+              "memory_kb": {
+                "before": 32.0,
+                "after": 48.0,
+                "delta_pct": 50.0
+              },
+              "energy_mj": {
+                "before": 2.2,
+                "after": 3.5200000000000005,
+                "delta_pct": 60.00000000000001
+              },
+              "reliability": {
+                "before": 0.92,
+                "after": 0.6900000000000001,
+                "delta_pct": -24.999999999999996
+              }
+            }
+          }
+        ],
+        "matches_count": 5,
+        "total_events": 5,
+        "match_rate": 1.0
+      },
+      "validity_envelope": {
+        "valid_perturbations": [
+          "P0",
+          "P1"
+        ],
+        "invalid_perturbations": [
+          "P2",
+          "P3",
+          "P4"
+        ],
+        "validity_envelope_size": 2,
+        "total_perturbations": 5
+      }
+    }
+  ]
+}

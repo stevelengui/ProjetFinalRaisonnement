@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-09-17T12:43:49.799725",
+  "reports": {
+    "ecg_hybrid_8bit": {
+      "model_id": "ecg_hybrid_8bit",
+      "total_parameters": 373128,
+      "quantization_bits": 8,
+      "bytes_per_param": 1,
+      "memory_components": {
+        "M_weights": 373128,
+        "M_activation_peak": 4848,
+        "M_state": 2304,
+        "M_runtime": 2048,
+        "M_code": 8192,
+        "M_total": 390520
+      },
+      "memory_kb": {
+        "M_weights_kb": 364.38,
+        "M_activation_peak_kb": 4.73,
+        "M_state_kb": 2.25,
+        "M_runtime_kb": 2.0,
+        "M_code_kb": 8.0,
+        "M_total_kb": 381.37
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "Conv1D",
+          "n_parameters": 30,
+          "bytes_per_param": 1,
+          "weight_bytes": 30,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Conv2D",
+          "n_parameters": 216,
+          "bytes_per_param": 1,
+          "weight_bytes": 216,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "LSTM-ih",
+          "n_parameters": 3168,
+          "bytes_per_param": 1,
+          "weight_bytes": 3168,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "LSTM-hh",
+          "n_parameters": 2304,
+          "bytes_per_param": 1,
+          "weight_bytes": 2304,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "SNN-LIF",
+          "n_parameters": 2176,
+          "bytes_per_param": 1,
+          "weight_bytes": 2176,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Dense-1",
+          "n_parameters": 4128,
+          "bytes_per_param": 1,
+          "weight_bytes": 4128,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Dense-2",
+          "n_parameters": 165,
+          "bytes_per_param": 1,
+          "weight_bytes": 165,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Residual+Attention",
+          "n_parameters": 360941,
+          "bytes_per_param": 1,
+          "weight_bytes": 360941,
+          "bias_bytes": 0,
+          "notes": "Weight sharing, r\u00e9siduels, attention sparse"
+        }
+      ],
+      "provenance": "DER",
+      "method": "Layer-by-layer reconstruction from trained model + activation analysis",
+      "assumptions": [
+        "8-bit quantization (1 byte/param)",
+        "Peak activation memory (not average)",
+        "Runtime includes stack + heap + buffers",
+        "Code size for RV32IMAC compiled binary",
+        "Weight sharing applied to residual/attention layers"
+      ],
+      "git_commit": "",
+      "timestamp": "2026-09-17T12:43:49.799548"
+    },
+    "vibration_hybrid_8bit": {
+      "model_id": "vibration_hybrid_8bit",
+      "total_parameters": 492800,
+      "quantization_bits": 8,
+      "bytes_per_param": 1,
+      "memory_components": {
+        "M_weights": 492800,
+        "M_activation_peak": 6480,
+        "M_state": 3072,
+        "M_runtime": 2560,
+        "M_code": 10240,
+        "M_total": 515152
+      },
+      "memory_kb": {
+        "M_weights_kb": 481.25,
+        "M_activation_peak_kb": 6.33,
+        "M_state_kb": 3.0,
+        "M_runtime_kb": 2.5,
+        "M_code_kb": 10.0,
+        "M_total_kb": 503.08
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "Conv1D",
+          "n_parameters": 160,
+          "bytes_per_param": 1,
+          "weight_bytes": 160,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Conv2D",
+          "n_parameters": 6144,
+          "bytes_per_param": 1,
+          "weight_bytes": 6144,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "LSTM",
+          "n_parameters": 98816,
+          "bytes_per_param": 1,
+          "weight_bytes": 98816,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "SNN-LIF",
+          "n_parameters": 49152,
+          "bytes_per_param": 1,
+          "weight_bytes": 49152,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Dense",
+          "n_parameters": 49472,
+          "bytes_per_param": 1,
+          "weight_bytes": 49472,
+          "bias_bytes": 0,
+          "notes": ""
+        },
+        {
+          "layer_name": "Residual+Attention",
+          "n_parameters": 289056,
+          "bytes_per_param": 1,
+          "weight_bytes": 289056,
+          "bias_bytes": 0,
+          "notes": ""
+        }
+      ],
+      "provenance": "DER",
+      "method": "Layer-by-layer reconstruction",
+      "assumptions": [
+        "8-bit quantization",
+        "Peak activation memory"
+      ],
+      "git_commit": "",
+      "timestamp": "2026-09-17T12:43:49.799510"
+    }
+  },
+  "8bit_53KB_issue_resolution": {
+    "issue": "373 128 params \u00d7 1 octet \u2260 8,53 KB",
+    "old_claim": "8,53 KB (INCORRECT)",
+    "correct_value_bytes": 373128,
+    "correct_value_kib": 364.38,
+    "correct_value_kb": 373.13,
+    "explanation": "373 128 param\u00e8tres \u00d7 1 octet/param = 373 128 bytes. En KiB (1024 bytes) : 364.38 KiB. L'ancienne valeur de 8,53 KB \u00e9tait incorrecte. La valeur r\u00e9elle des POIDS est 364.38 KiB. Le TOTAL (poids + act + \u00e9tat + runtime + code) est 381.37 KiB.",
+    "breakdown": {
+      "M_weights_kib": 364.38,
+      "M_activation_peak_kib": 4.73,
+      "M_state_kib": 2.25,
+      "M_runtime_kib": 2.0,
+      "M_code_kib": 8.0,
+      "M_total_kib": 381.37
+    },
+    "recommendation": "Corriger TOUS les tableaux et textes pour utiliser M_weights_kib et M_total_kib. Ne JAMAIS \u00e9crire '8,53 KB' pour les poids de 373 128 param\u00e8tres 8-bit."
+  }
+}

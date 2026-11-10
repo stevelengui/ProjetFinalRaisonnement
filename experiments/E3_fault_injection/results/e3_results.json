@@ -1,0 +1,234 @@
+{
+  "experiment": "E3",
+  "rq": "RQ3",
+  "timestamp": "2026-09-18T09:41:56.711236",
+  "candidates_count": 4,
+  "fault_models_count": 5,
+  "reliability_metrics": {
+    "ecg_hybrid_8bit": {
+      "p_sdc": 0.155,
+      "delta_a_f_mean": 0.01829888735723509,
+      "delta_a_f_max": 0.17545181528651632,
+      "critical_sensitivity": 0.17545181528651632,
+      "detection_coverage": 0.04,
+      "graceful_degradation_slope": 0.4445690074784375
+    },
+    "ecg_hybrid_4bit": {
+      "p_sdc": 0.19,
+      "delta_a_f_mean": 0.035484337293711345,
+      "delta_a_f_max": 0.22618145783340293,
+      "critical_sensitivity": 0.0,
+      "detection_coverage": 0.05,
+      "graceful_degradation_slope": 0.5347393634313546
+    },
+    "ecg_snn_2bit": {
+      "p_sdc": 0.165,
+      "delta_a_f_mean": 0.04991762879724753,
+      "delta_a_f_max": 0.3486413393666933,
+      "critical_sensitivity": 0.0,
+      "detection_coverage": 0.035,
+      "graceful_degradation_slope": 0.4865116221462554
+    },
+    "ecg_hybrid_8bit_protected": {
+      "p_sdc": 0.0,
+      "delta_a_f_mean": 0.0008723582647353922,
+      "delta_a_f_max": 0.004794999999999994,
+      "critical_sensitivity": 0.004794999999999994,
+      "detection_coverage": 0.015,
+      "graceful_degradation_slope": 0.4808320126995168
+    }
+  },
+  "comparison": {
+    "ecg_hybrid_8bit": {
+      "p_sdc": 0.155,
+      "delta_a_f_mean": 0.0183,
+      "delta_a_f_max": 0.1755,
+      "critical_sensitivity": 0.1755,
+      "detection_coverage": 0.04,
+      "graceful_degradation": 0.4446,
+      "reliability_score": 0.5094
+    },
+    "ecg_hybrid_4bit": {
+      "p_sdc": 0.19,
+      "delta_a_f_mean": 0.0355,
+      "delta_a_f_max": 0.2262,
+      "critical_sensitivity": 0.0,
+      "detection_coverage": 0.05,
+      "graceful_degradation": 0.5347,
+      "reliability_score": 0.663
+    },
+    "ecg_snn_2bit": {
+      "p_sdc": 0.165,
+      "delta_a_f_mean": 0.0499,
+      "delta_a_f_max": 0.3486,
+      "critical_sensitivity": 0.0,
+      "detection_coverage": 0.035,
+      "graceful_degradation": 0.4865,
+      "reliability_score": 0.6412
+    },
+    "ecg_hybrid_8bit_protected": {
+      "p_sdc": 0.0,
+      "delta_a_f_mean": 0.0009,
+      "delta_a_f_max": 0.0048,
+      "critical_sensitivity": 0.0048,
+      "detection_coverage": 0.015,
+      "graceful_degradation": 0.4808,
+      "reliability_score": 0.7917
+    }
+  },
+  "renversement": {
+    "reliability_requirement": 0.9,
+    "renversement_occurs": true,
+    "strict_reversal": false,
+    "rank_reversal": true,
+    "reversed_designs": [],
+    "rescued_designs": [],
+    "best_before": "ecg_hybrid_8bit",
+    "best_after": "ecg_hybrid_8bit_protected",
+    "analysis": "============================================================\nANALYSE DU RENVERSEMENT\n============================================================\n\n\ud83d\udcca Meilleurs designs :\n   AVANT injection : ecg_hybrid_8bit (accuracy=0.961)\n   APR\u00c8S injection : ecg_hybrid_8bit_protected (accuracy=0.958)\n\n\u2705 RENVERSEMENT DE RANG D\u00c9TECT\u00c9\n   Le design optimal a CHANG\u00c9 apr\u00e8s injection\n   C'est un RENVERSEMENT D\u00c9CISIF car :\n     - ecg_hybrid_8bit est meilleur NOMINALEMENT\n     - ecg_hybrid_8bit_protected est meilleur SOUS FAUTES\n     - La d\u00e9cision D\u00c9PEND du contexte de fiabilit\u00e9\n\n\ud83c\udfaf IMPLICATION POUR LE M\u00c9TA-RAISONNEUR :\n   Sans analyse de fiabilit\u00e9 \u2192 choisit ecg_hybrid_8bit\n   Avec analyse de fiabilit\u00e9 \u2192 choisit ecg_hybrid_8bit_protected\n   \u2192 La couche m\u00e9ta-raisonnement CHANGE la d\u00e9cision",
+    "decisions": [
+      {
+        "design_id": "ecg_hybrid_8bit",
+        "feasible_before": true,
+        "feasible_after": true,
+        "nominal_accuracy": 0.961,
+        "fault_tolerant_accuracy": 0.9418125553669787,
+        "reason": "All constraints met"
+      },
+      {
+        "design_id": "ecg_hybrid_4bit",
+        "feasible_before": true,
+        "feasible_after": true,
+        "nominal_accuracy": 0.948,
+        "fault_tolerant_accuracy": 0.9096455138514828,
+        "reason": "All constraints met"
+      },
+      {
+        "design_id": "ecg_snn_2bit",
+        "feasible_before": false,
+        "feasible_after": false,
+        "nominal_accuracy": 0.92,
+        "fault_tolerant_accuracy": 0.8617268864567104,
+        "reason": "Nominal accuracy below threshold"
+      },
+      {
+        "design_id": "ecg_hybrid_8bit_protected",
+        "feasible_before": true,
+        "feasible_after": true,
+        "nominal_accuracy": 0.959,
+        "fault_tolerant_accuracy": 0.958138170929646,
+        "reason": "All constraints met"
+      }
+    ]
+  },
+  "fault_analysis": {
+    "ecg_hybrid_8bit": {
+      "weight_bit_flip": {
+        "avg_drop": 0.012302012615384971,
+        "sdc_count": 7,
+        "total": 39
+      },
+      "activation_flip": {
+        "avg_drop": 0.010018665692833297,
+        "sdc_count": 6,
+        "total": 36
+      },
+      "snn_state_perturbation": {
+        "avg_drop": 0.03754272322240725,
+        "sdc_count": 12,
+        "total": 43
+      },
+      "memory_fault": {
+        "avg_drop": 0.0070425526028361635,
+        "sdc_count": 3,
+        "total": 39
+      },
+      "control_state_perturbation": {
+        "avg_drop": 0.021635589870485656,
+        "sdc_count": 3,
+        "total": 43
+      }
+    },
+    "ecg_hybrid_4bit": {
+      "weight_bit_flip": {
+        "avg_drop": 0.031094018263643178,
+        "sdc_count": 9,
+        "total": 42
+      },
+      "activation_flip": {
+        "avg_drop": 0.026393348038604075,
+        "sdc_count": 7,
+        "total": 38
+      },
+      "snn_state_perturbation": {
+        "avg_drop": 0.07491806863131445,
+        "sdc_count": 13,
+        "total": 39
+      },
+      "memory_fault": {
+        "avg_drop": 0.020525530273695875,
+        "sdc_count": 5,
+        "total": 42
+      },
+      "control_state_perturbation": {
+        "avg_drop": 0.025746013284251575,
+        "sdc_count": 4,
+        "total": 39
+      }
+    },
+    "ecg_snn_2bit": {
+      "weight_bit_flip": {
+        "avg_drop": 0.03249237042238222,
+        "sdc_count": 7,
+        "total": 52
+      },
+      "activation_flip": {
+        "avg_drop": 0.03753559078331996,
+        "sdc_count": 4,
+        "total": 35
+      },
+      "snn_state_perturbation": {
+        "avg_drop": 0.10995076537328767,
+        "sdc_count": 15,
+        "total": 40
+      },
+      "memory_fault": {
+        "avg_drop": 0.06970186984501288,
+        "sdc_count": 5,
+        "total": 30
+      },
+      "control_state_perturbation": {
+        "avg_drop": 0.011420700227617214,
+        "sdc_count": 2,
+        "total": 43
+      }
+    },
+    "ecg_hybrid_8bit_protected": {
+      "weight_bit_flip": {
+        "avg_drop": 0.0011388654618433457,
+        "sdc_count": 0,
+        "total": 36
+      },
+      "activation_flip": {
+        "avg_drop": 0.0004679817757137626,
+        "sdc_count": 0,
+        "total": 38
+      },
+      "snn_state_perturbation": {
+        "avg_drop": 0.0011987499999999984,
+        "sdc_count": 0,
+        "total": 36
+      },
+      "memory_fault": {
+        "avg_drop": 0.0010586603624611046,
+        "sdc_count": 0,
+        "total": 47
+      },
+      "control_state_perturbation": {
+        "avg_drop": 0.0005297012048354225,
+        "sdc_count": 0,
+        "total": 43
+      }
+    }
+  }
+}

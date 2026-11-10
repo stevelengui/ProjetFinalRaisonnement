@@ -1,0 +1,450 @@
+{
+  "experiment": "E5",
+  "rq": "RQ3",
+  "timestamp": "2026-11-03T15:45:19.461656",
+  "threats_count": 5,
+  "attacks_count": 6,
+  "designs_count": 5,
+  "asr_results": {
+    "T0": {
+      "sec_none": {
+        "max_asr": 0.0,
+        "avg_asr": 0.0,
+        "all_valid": true,
+        "protection": "none",
+        "resource_overhead": {
+          "latency_pct": 0.0,
+          "memory_pct": 0.0,
+          "energy_pct": 0.0
+        }
+      },
+      "sec_input_val": {
+        "max_asr": 0.0,
+        "avg_asr": 0.0,
+        "all_valid": true,
+        "protection": "input_validation",
+        "resource_overhead": {
+          "latency_pct": 7.3,
+          "memory_pct": 4.2,
+          "energy_pct": 3.6
+        }
+      },
+      "sec_adv_train": {
+        "max_asr": 0.0,
+        "avg_asr": 0.0,
+        "all_valid": true,
+        "protection": "adversarial_training",
+        "resource_overhead": {
+          "latency_pct": 15.9,
+          "memory_pct": 12.5,
+          "energy_pct": 10.7
+        }
+      },
+      "sec_rand_smooth": {
+        "max_asr": 0.0,
+        "avg_asr": 0.0,
+        "all_valid": true,
+        "protection": "randomized_smoothing",
+        "resource_overhead": {
+          "latency_pct": 52.4,
+          "memory_pct": 33.3,
+          "energy_pct": 50.0
+        }
+      },
+      "sec_ensemble": {
+        "max_asr": 0.0,
+        "avg_asr": 0.0,
+        "all_valid": true,
+        "protection": "ensemble",
+        "resource_overhead": {
+          "latency_pct": 204.9,
+          "memory_pct": 200.0,
+          "energy_pct": 203.6
+        }
+      }
+    },
+    "T1": {
+      "sec_none": {
+        "max_asr": 0.5375,
+        "avg_asr": 0.5375,
+        "all_valid": false,
+        "protection": "none",
+        "resource_overhead": {
+          "latency_pct": 0.0,
+          "memory_pct": 0.0,
+          "energy_pct": 0.0
+        }
+      },
+      "sec_input_val": {
+        "max_asr": 0.5375,
+        "avg_asr": 0.5375,
+        "all_valid": false,
+        "protection": "input_validation",
+        "resource_overhead": {
+          "latency_pct": 7.3,
+          "memory_pct": 4.2,
+          "energy_pct": 3.6
+        }
+      },
+      "sec_adv_train": {
+        "max_asr": 0.5375,
+        "avg_asr": 0.5375,
+        "all_valid": false,
+        "protection": "adversarial_training",
+        "resource_overhead": {
+          "latency_pct": 15.9,
+          "memory_pct": 12.5,
+          "energy_pct": 10.7
+        }
+      },
+      "sec_rand_smooth": {
+        "max_asr": 0.5375,
+        "avg_asr": 0.5375,
+        "all_valid": false,
+        "protection": "randomized_smoothing",
+        "resource_overhead": {
+          "latency_pct": 52.4,
+          "memory_pct": 33.3,
+          "energy_pct": 50.0
+        }
+      },
+      "sec_ensemble": {
+        "max_asr": 0.5375,
+        "avg_asr": 0.5375,
+        "all_valid": false,
+        "protection": "ensemble",
+        "resource_overhead": {
+          "latency_pct": 204.9,
+          "memory_pct": 200.0,
+          "energy_pct": 203.6
+        }
+      }
+    },
+    "T2": {
+      "sec_none": {
+        "max_asr": 0.575,
+        "avg_asr": 0.575,
+        "all_valid": false,
+        "protection": "none",
+        "resource_overhead": {
+          "latency_pct": 0.0,
+          "memory_pct": 0.0,
+          "energy_pct": 0.0
+        }
+      },
+      "sec_input_val": {
+        "max_asr": 0.575,
+        "avg_asr": 0.575,
+        "all_valid": false,
+        "protection": "input_validation",
+        "resource_overhead": {
+          "latency_pct": 7.3,
+          "memory_pct": 4.2,
+          "energy_pct": 3.6
+        }
+      },
+      "sec_adv_train": {
+        "max_asr": 0.575,
+        "avg_asr": 0.575,
+        "all_valid": false,
+        "protection": "adversarial_training",
+        "resource_overhead": {
+          "latency_pct": 15.9,
+          "memory_pct": 12.5,
+          "energy_pct": 10.7
+        }
+      },
+      "sec_rand_smooth": {
+        "max_asr": 0.575,
+        "avg_asr": 0.575,
+        "all_valid": false,
+        "protection": "randomized_smoothing",
+        "resource_overhead": {
+          "latency_pct": 52.4,
+          "memory_pct": 33.3,
+          "energy_pct": 50.0
+        }
+      },
+      "sec_ensemble": {
+        "max_asr": 0.575,
+        "avg_asr": 0.575,
+        "all_valid": false,
+        "protection": "ensemble",
+        "resource_overhead": {
+          "latency_pct": 204.9,
+          "memory_pct": 200.0,
+          "energy_pct": 203.6
+        }
+      }
+    },
+    "T3": {
+      "sec_none": {
+        "max_asr": 0.6125,
+        "avg_asr": 0.6125,
+        "all_valid": false,
+        "protection": "none",
+        "resource_overhead": {
+          "latency_pct": 0.0,
+          "memory_pct": 0.0,
+          "energy_pct": 0.0
+        }
+      },
+      "sec_input_val": {
+        "max_asr": 0.6125,
+        "avg_asr": 0.6125,
+        "all_valid": false,
+        "protection": "input_validation",
+        "resource_overhead": {
+          "latency_pct": 7.3,
+          "memory_pct": 4.2,
+          "energy_pct": 3.6
+        }
+      },
+      "sec_adv_train": {
+        "max_asr": 0.6125,
+        "avg_asr": 0.6125,
+        "all_valid": false,
+        "protection": "adversarial_training",
+        "resource_overhead": {
+          "latency_pct": 15.9,
+          "memory_pct": 12.5,
+          "energy_pct": 10.7
+        }
+      },
+      "sec_rand_smooth": {
+        "max_asr": 0.6125,
+        "avg_asr": 0.6125,
+        "all_valid": false,
+        "protection": "randomized_smoothing",
+        "resource_overhead": {
+          "latency_pct": 52.4,
+          "memory_pct": 33.3,
+          "energy_pct": 50.0
+        }
+      },
+      "sec_ensemble": {
+        "max_asr": 0.6125,
+        "avg_asr": 0.6125,
+        "all_valid": false,
+        "protection": "ensemble",
+        "resource_overhead": {
+          "latency_pct": 204.9,
+          "memory_pct": 200.0,
+          "energy_pct": 203.6
+        }
+      }
+    },
+    "T4": {
+      "sec_none": {
+        "max_asr": 0.6425,
+        "avg_asr": 0.6425,
+        "all_valid": false,
+        "protection": "none",
+        "resource_overhead": {
+          "latency_pct": 0.0,
+          "memory_pct": 0.0,
+          "energy_pct": 0.0
+        }
+      },
+      "sec_input_val": {
+        "max_asr": 0.6425,
+        "avg_asr": 0.6425,
+        "all_valid": false,
+        "protection": "input_validation",
+        "resource_overhead": {
+          "latency_pct": 7.3,
+          "memory_pct": 4.2,
+          "energy_pct": 3.6
+        }
+      },
+      "sec_adv_train": {
+        "max_asr": 0.6425,
+        "avg_asr": 0.6425,
+        "all_valid": false,
+        "protection": "adversarial_training",
+        "resource_overhead": {
+          "latency_pct": 15.9,
+          "memory_pct": 12.5,
+          "energy_pct": 10.7
+        }
+      },
+      "sec_rand_smooth": {
+        "max_asr": 0.6425,
+        "avg_asr": 0.6425,
+        "all_valid": false,
+        "protection": "randomized_smoothing",
+        "resource_overhead": {
+          "latency_pct": 52.4,
+          "memory_pct": 33.3,
+          "energy_pct": 50.0
+        }
+      },
+      "sec_ensemble": {
+        "max_asr": 0.6425,
+        "avg_asr": 0.6425,
+        "all_valid": false,
+        "protection": "ensemble",
+        "resource_overhead": {
+          "latency_pct": 204.9,
+          "memory_pct": 200.0,
+          "energy_pct": 203.6
+        }
+      }
+    }
+  },
+  "selections": {
+    "T0": {
+      "threat_name": "No Threat",
+      "threat_level": 0.0,
+      "selected_design": "sec_none",
+      "decision": "ACCEPT",
+      "reason": "All constraints met (ASR=0.000)",
+      "asr_max": 0.0,
+      "resource_violation": false
+    },
+    "T1": {
+      "threat_name": "Low Threat - Black Box",
+      "threat_level": 0.25,
+      "selected_design": "sec_none",
+      "decision": "DEFER",
+      "reason": "Aucun design ne satisfait ASR \u2264 0.2. Meilleur candidat: sec_none (ASR=0.537). ACTION: DEFER - Demander plus d'evidence ou rel\u00e2cher la contrainte.",
+      "asr_max": 0.5375,
+      "resource_violation": false
+    },
+    "T2": {
+      "threat_name": "Medium Threat - Grey Box Adversarial",
+      "threat_level": 0.5,
+      "selected_design": "sec_none",
+      "decision": "DEFER",
+      "reason": "Aucun design ne satisfait ASR \u2264 0.2. Meilleur candidat: sec_none (ASR=0.575). ACTION: DEFER - Demander plus d'evidence ou rel\u00e2cher la contrainte.",
+      "asr_max": 0.575,
+      "resource_violation": false
+    },
+    "T3": {
+      "threat_name": "High Threat - White Box Adversarial",
+      "threat_level": 0.75,
+      "selected_design": "sec_none",
+      "decision": "DEFER",
+      "reason": "Aucun design ne satisfait ASR \u2264 0.2. Meilleur candidat: sec_none (ASR=0.613). ACTION: DEFER - Demander plus d'evidence ou rel\u00e2cher la contrainte.",
+      "asr_max": 0.6125,
+      "resource_violation": false
+    },
+    "T4": {
+      "threat_name": "Critical Threat - Model Extraction + Side Channel",
+      "threat_level": 0.95,
+      "selected_design": "sec_none",
+      "decision": "DEFER",
+      "reason": "Aucun design ne satisfait ASR \u2264 0.2. Meilleur candidat: sec_none (ASR=0.642). ACTION: DEFER - Demander plus d'evidence ou rel\u00e2cher la contrainte.",
+      "asr_max": 0.6425,
+      "resource_violation": false
+    }
+  },
+  "decisive_test": {
+    "threat_results": {
+      "T0": {
+        "sec_none": {
+          "decision": "ACCEPT",
+          "asr_max": 0.0,
+          "resource_violation": false,
+          "reason": "All constraints met (ASR=0.000)"
+        },
+        "sec_adv_train": {
+          "decision": "ACCEPT",
+          "asr_max": 0.0,
+          "resource_violation": false,
+          "reason": "All constraints met (ASR=0.000)"
+        },
+        "sec_ensemble": {
+          "decision": "REJECT",
+          "asr_max": 0.0,
+          "resource_violation": true,
+          "reason": "Resource violations: ['Latency 25.0 > 20.0', 'Memory 72.0 > 48.0', 'Energy 8.5 > 5.0']"
+        }
+      },
+      "T1": {
+        "sec_none": {
+          "decision": "DEFER",
+          "asr_max": 0.5375,
+          "resource_violation": false,
+          "reason": "ASR 0.537 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_adv_train": {
+          "decision": "DEFER",
+          "asr_max": 0.5375,
+          "resource_violation": false,
+          "reason": "ASR 0.537 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_ensemble": {
+          "decision": "REJECT",
+          "asr_max": 0.5375,
+          "resource_violation": true,
+          "reason": "Resource violations: ['Latency 25.0 > 20.0', 'Memory 72.0 > 48.0', 'Energy 8.5 > 5.0']"
+        }
+      },
+      "T2": {
+        "sec_none": {
+          "decision": "DEFER",
+          "asr_max": 0.575,
+          "resource_violation": false,
+          "reason": "ASR 0.575 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_adv_train": {
+          "decision": "DEFER",
+          "asr_max": 0.575,
+          "resource_violation": false,
+          "reason": "ASR 0.575 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_ensemble": {
+          "decision": "REJECT",
+          "asr_max": 0.575,
+          "resource_violation": true,
+          "reason": "Resource violations: ['Latency 25.0 > 20.0', 'Memory 72.0 > 48.0', 'Energy 8.5 > 5.0']"
+        }
+      },
+      "T3": {
+        "sec_none": {
+          "decision": "DEFER",
+          "asr_max": 0.6125,
+          "resource_violation": false,
+          "reason": "ASR 0.613 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_adv_train": {
+          "decision": "DEFER",
+          "asr_max": 0.6125,
+          "resource_violation": false,
+          "reason": "ASR 0.613 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_ensemble": {
+          "decision": "REJECT",
+          "asr_max": 0.6125,
+          "resource_violation": true,
+          "reason": "Resource violations: ['Latency 25.0 > 20.0', 'Memory 72.0 > 48.0', 'Energy 8.5 > 5.0']"
+        }
+      },
+      "T4": {
+        "sec_none": {
+          "decision": "DEFER",
+          "asr_max": 0.6425,
+          "resource_violation": false,
+          "reason": "ASR 0.642 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_adv_train": {
+          "decision": "DEFER",
+          "asr_max": 0.6425,
+          "resource_violation": false,
+          "reason": "ASR 0.642 > threshold 0.2. Additional evidence required before decision."
+        },
+        "sec_ensemble": {
+          "decision": "REJECT",
+          "asr_max": 0.6425,
+          "resource_violation": true,
+          "reason": "Resource violations: ['Latency 25.0 > 20.0', 'Memory 72.0 > 48.0', 'Energy 8.5 > 5.0']"
+        }
+      }
+    },
+    "renversement_detected": true,
+    "t4_rejects_none": true,
+    "t4_rejects_ensemble": true,
+    "t4_accepts_adv": false
+  }
+}

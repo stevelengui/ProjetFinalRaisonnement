@@ -1,0 +1,244 @@
+{
+  "experiment": "E6",
+  "rq": "RQ4",
+  "timestamp": "2026-09-18T10:00:58.315062",
+  "records_count": 3,
+  "avg_metrics": {
+    "EC": 1.0,
+    "CT": 0.9,
+    "DF": 1.0,
+    "CF": 1.0,
+    "AC": 1.0,
+    "AV": 1.0,
+    "overall": 0.985
+  },
+  "counterfactual_summary": {
+    "tests_run": 9,
+    "tests_passed": 7,
+    "all_passed": false
+  },
+  "records": [
+    {
+      "record_id": "ddr_001",
+      "design_id": "ecg_hybrid_8bit",
+      "completeness": {
+        "complete": true,
+        "completeness_score": 1.0,
+        "missing_components": [],
+        "components_present": {
+          "C": true,
+          "Gamma": true,
+          "A": true,
+          "E": true,
+          "U": true,
+          "R": true,
+          "Alt": true,
+          "Dec": true,
+          "CF": true
+        }
+      },
+      "counterfactual_results": {
+        "tests_run": 3,
+        "tests_passed": 3,
+        "all_passed": true,
+        "test_results": [
+          {
+            "test_id": "CF1",
+            "test_name": "Relax Constraint",
+            "passed": true,
+            "original_outcome": "ecg_hybrid_4bit REJET\u00c9",
+            "counterfactual_outcome": "ecg_hybrid_4bit ADMISSIBLE",
+            "details": {
+              "constraint": "accuracy_min",
+              "old_value": 0.95,
+              "new_value": 0.9299999999999999,
+              "alternative": "ecg_hybrid_4bit",
+              "alternative_value": 0.948
+            }
+          },
+          {
+            "test_id": "CF2",
+            "test_name": "Evidence Removal",
+            "passed": true,
+            "original_outcome": "ACCEPT avec confiance 0.95",
+            "counterfactual_outcome": "DEFER avec confiance 0.5",
+            "details": {
+              "removed_evidence": "ev_002",
+              "original_confidence": 0.95,
+              "counterfactual_confidence": 0.5,
+              "decision_before": "ACCEPT",
+              "decision_after": "DEFER"
+            }
+          },
+          {
+            "test_id": "CF3",
+            "test_name": "Contradictory Evidence",
+            "passed": true,
+            "original_outcome": "Une seule preuve: 8.2",
+            "counterfactual_outcome": "Conflit r\u00e9solu par escalade",
+            "details": {
+              "primary_value": 8.2,
+              "contradictory_value": 9.429999999999998,
+              "relative_diff": 0.14999999999999986,
+              "conflict_detected": true
+            }
+          }
+        ]
+      },
+      "audit_metrics": {
+        "record_id": "ddr_001",
+        "EC": 1.0,
+        "CT": 1.0,
+        "DF": 1.0,
+        "CF": 1.0,
+        "AC": 1.0,
+        "AV": 1.0,
+        "overall": 1.0
+      }
+    },
+    {
+      "record_id": "ddr_002",
+      "design_id": "ecg_snn_2bit",
+      "completeness": {
+        "complete": true,
+        "completeness_score": 1.0,
+        "missing_components": [],
+        "components_present": {
+          "C": true,
+          "Gamma": true,
+          "A": true,
+          "E": true,
+          "U": true,
+          "R": true,
+          "Alt": true,
+          "Dec": true,
+          "CF": true
+        }
+      },
+      "counterfactual_results": {
+        "tests_run": 3,
+        "tests_passed": 2,
+        "all_passed": false,
+        "test_results": [
+          {
+            "test_id": "CF1",
+            "test_name": "Relax Constraint",
+            "passed": false,
+            "original_outcome": "Aucune alternative rejet\u00e9e trouv\u00e9e",
+            "counterfactual_outcome": "N/A",
+            "details": {}
+          },
+          {
+            "test_id": "CF2",
+            "test_name": "Evidence Removal",
+            "passed": true,
+            "original_outcome": "REJECT avec confiance 0.94",
+            "counterfactual_outcome": "DEFER avec confiance 0.5",
+            "details": {
+              "removed_evidence": "ev_003",
+              "original_confidence": 0.94,
+              "counterfactual_confidence": 0.5,
+              "decision_before": "REJECT",
+              "decision_after": "DEFER"
+            }
+          },
+          {
+            "test_id": "CF3",
+            "test_name": "Contradictory Evidence",
+            "passed": true,
+            "original_outcome": "Une seule preuve: 0.92",
+            "counterfactual_outcome": "Conflit r\u00e9solu par escalade",
+            "details": {
+              "primary_value": 0.92,
+              "contradictory_value": 1.058,
+              "relative_diff": 0.15,
+              "conflict_detected": true
+            }
+          }
+        ]
+      },
+      "audit_metrics": {
+        "record_id": "ddr_002",
+        "EC": 1.0,
+        "CT": 1.0,
+        "DF": 1.0,
+        "CF": 1.0,
+        "AC": 1.0,
+        "AV": 1.0,
+        "overall": 1.0
+      }
+    },
+    {
+      "record_id": "ddr_003",
+      "design_id": "vibration_hybrid_8bit",
+      "completeness": {
+        "complete": true,
+        "completeness_score": 1.0,
+        "missing_components": [],
+        "components_present": {
+          "C": true,
+          "Gamma": true,
+          "A": true,
+          "E": true,
+          "U": true,
+          "R": true,
+          "Alt": false,
+          "Dec": true,
+          "CF": true
+        }
+      },
+      "counterfactual_results": {
+        "tests_run": 3,
+        "tests_passed": 2,
+        "all_passed": false,
+        "test_results": [
+          {
+            "test_id": "CF1",
+            "test_name": "Relax Constraint",
+            "passed": false,
+            "original_outcome": "Aucune alternative rejet\u00e9e trouv\u00e9e",
+            "counterfactual_outcome": "N/A",
+            "details": {}
+          },
+          {
+            "test_id": "CF2",
+            "test_name": "Evidence Removal",
+            "passed": true,
+            "original_outcome": "DEFER avec confiance 0.75",
+            "counterfactual_outcome": "DEFER avec confiance 0.5",
+            "details": {
+              "removed_evidence": "ev_004",
+              "original_confidence": 0.75,
+              "counterfactual_confidence": 0.5,
+              "decision_before": "DEFER",
+              "decision_after": "DEFER"
+            }
+          },
+          {
+            "test_id": "CF3",
+            "test_name": "Contradictory Evidence",
+            "passed": true,
+            "original_outcome": "Une seule preuve: 6.8",
+            "counterfactual_outcome": "Conflit r\u00e9solu par escalade",
+            "details": {
+              "primary_value": 6.8,
+              "contradictory_value": 7.819999999999999,
+              "relative_diff": 0.14999999999999994,
+              "conflict_detected": true
+            }
+          }
+        ]
+      },
+      "audit_metrics": {
+        "record_id": "ddr_003",
+        "EC": 1.0,
+        "CT": 0.7,
+        "DF": 1.0,
+        "CF": 1.0,
+        "AC": 1.0,
+        "AV": 1.0,
+        "overall": 0.955
+      }
+    }
+  ]
+}

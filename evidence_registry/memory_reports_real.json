@@ -1,0 +1,282 @@
+{
+  "generated_at": "2026-09-18T09:37:34.405452",
+  "reports": {
+    "ecg_hybrid_8bit": {
+      "model_id": "ecg_hybrid_8bit",
+      "provenance": "DER_FROM_ARTIFACTS",
+      "source_files": [
+        "firmware/model/model_weights.h",
+        "firmware/model/model_weights.c",
+        "firmware/model/arrays/*.txt"
+      ],
+      "total_parameters": 7651,
+      "quantization_bits": 8,
+      "bytes_per_param": 1,
+      "M_weights": 7651,
+      "M_activation_peak": 11014,
+      "M_state": 792,
+      "M_runtime": 2048,
+      "M_code": 8192,
+      "M_total": 29697,
+      "M_weights_kib": 7.47,
+      "M_activation_peak_kib": 10.76,
+      "M_state_kib": 0.77,
+      "M_runtime_kib": 2.0,
+      "M_code_kib": 8.0,
+      "M_total_kib": 29.0,
+      "layer_breakdown": [
+        {
+          "layer_name": "conv1_weight",
+          "array_name": "conv1_weight",
+          "n_elements": 30,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 30,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "conv1_bias",
+          "array_name": "conv1_bias",
+          "n_elements": 6,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 6,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "conv2_weight",
+          "array_name": "conv2_weight",
+          "n_elements": 216,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 216,
+          "scale_value": 2
+        },
+        {
+          "layer_name": "conv2_bias",
+          "array_name": "conv2_bias",
+          "n_elements": 12,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 12,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "lstm_weight_ih",
+          "array_name": "lstm_weight_ih",
+          "n_elements": 3168,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 3168,
+          "scale_value": 2
+        },
+        {
+          "layer_name": "lstm_weight_hh",
+          "array_name": "lstm_weight_hh",
+          "n_elements": 2304,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 2304,
+          "scale_value": 2
+        },
+        {
+          "layer_name": "lstm_bias_ih",
+          "array_name": "lstm_bias_ih",
+          "n_elements": 96,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 96,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "lstm_bias_hh",
+          "array_name": "lstm_bias_hh",
+          "n_elements": 96,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 96,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "router_fc1_weight",
+          "array_name": "router_fc1_weight",
+          "n_elements": 432,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 432,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "router_fc1_bias",
+          "array_name": "router_fc1_bias",
+          "n_elements": 12,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 12,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "router_fc2_weight",
+          "array_name": "router_fc2_weight",
+          "n_elements": 24,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 24,
+          "scale_value": 1
+        },
+        {
+          "layer_name": "router_fc2_bias",
+          "array_name": "router_fc2_bias",
+          "n_elements": 2,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 2,
+          "scale_value": 0
+        },
+        {
+          "layer_name": "fusion_weight",
+          "array_name": "fusion_weight",
+          "n_elements": 864,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 864,
+          "scale_value": 3
+        },
+        {
+          "layer_name": "fusion_bias",
+          "array_name": "fusion_bias",
+          "n_elements": 24,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 24,
+          "scale_value": 0
+        },
+        {
+          "layer_name": "fc1_weight",
+          "array_name": "fc1_weight",
+          "n_elements": 288,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 288,
+          "scale_value": 3
+        },
+        {
+          "layer_name": "fc1_bias",
+          "array_name": "fc1_bias",
+          "n_elements": 12,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 12,
+          "scale_value": 0
+        },
+        {
+          "layer_name": "fc2_weight",
+          "array_name": "fc2_weight",
+          "n_elements": 60,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 60,
+          "scale_value": 3
+        },
+        {
+          "layer_name": "fc2_bias",
+          "array_name": "fc2_bias",
+          "n_elements": 5,
+          "element_type": "int8_t",
+          "bytes_per_element": 1,
+          "total_bytes": 5,
+          "scale_value": 2
+        }
+      ],
+      "activation_breakdown": [
+        {
+          "buffer": "input_buf",
+          "elements": 360,
+          "type": "int8_t",
+          "bytes": 360
+        },
+        {
+          "buffer": "conv1_out",
+          "elements": 1080,
+          "type": "int32_t",
+          "bytes": 4320
+        },
+        {
+          "buffer": "conv2_out",
+          "elements": 1080,
+          "type": "int32_t",
+          "bytes": 4320
+        },
+        {
+          "buffer": "snn_input",
+          "elements": 1056,
+          "type": "int8_t",
+          "bytes": 1056
+        },
+        {
+          "buffer": "spike_train",
+          "elements": 768,
+          "type": "int8_t",
+          "bytes": 768
+        },
+        {
+          "buffer": "lstm_state",
+          "elements": 24,
+          "type": "int8_t",
+          "bytes": 24
+        },
+        {
+          "buffer": "router_output",
+          "elements": 2,
+          "type": "int8_t",
+          "bytes": 2
+        },
+        {
+          "buffer": "fused_features",
+          "elements": 24,
+          "type": "int32_t",
+          "bytes": 96
+        },
+        {
+          "buffer": "fc1_out",
+          "elements": 12,
+          "type": "int32_t",
+          "bytes": 48
+        },
+        {
+          "buffer": "output",
+          "elements": 5,
+          "type": "int32_t",
+          "bytes": 20
+        }
+      ],
+      "verified": true,
+      "verification_method": "Direct count from C array declarations",
+      "timestamp": "2026-09-18T09:37:34.406049"
+    }
+  },
+  "8bit_53KB_issue_resolution": {
+    "issue": "373 128 params \u00d7 1 octet \u2260 8,53 KB",
+    "old_claim": {
+      "parameter_count": 373128,
+      "memory_kb": 8.53,
+      "verdict": "INCORRECT"
+    },
+    "new_claim": {
+      "parameter_count": 7651,
+      "memory_kib": 7.47,
+      "memory_bytes": 7651,
+      "verdict": "CORRECT"
+    },
+    "explanation": "Le mod\u00e8le r\u00e9el a 7,651 param\u00e8tres (int8_t), ce qui donne M_weights = 7,651 bytes = 7.47 KiB. Le '373128' dans le code est en r\u00e9alit\u00e9 TOTAL_OPS (nombre d'op\u00e9rations), PAS le nombre de param\u00e8tres. L'ancien claim de 8,53 KB \u00e9tait une erreur de confusion entre param\u00e8tres et op\u00e9rations.",
+    "breakdown": {
+      "M_weights_kib": 7.47,
+      "M_activation_peak_kib": 10.76,
+      "M_state_kib": 0.77,
+      "M_runtime_kib": 2.0,
+      "M_code_kib": 8.0,
+      "M_total_kib": 29.0
+    },
+    "recommendation": "Corriger TOUS les tableaux : utiliser 7,651 param\u00e8tres et 7.47 KiB pour M_weights. Ne JAMAIS \u00e9crire '373 128 params' car c'est le nombre d'OP\u00c9RATIONS, pas de param\u00e8tres."
+  }
+}

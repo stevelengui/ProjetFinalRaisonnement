@@ -1,0 +1,98 @@
+{
+  "record_id": "ddr_002",
+  "design_id": "ecg_snn_2bit",
+  "timestamp": "2026-09-18T10:00:58.308405",
+  "C": {
+    "context_id": "ctx_medical_002",
+    "domain": "medical",
+    "environment": "hospital",
+    "safety_relevant": true,
+    "requirements": {
+      "latency_ms": 20.0,
+      "accuracy": 0.95
+    }
+  },
+  "Gamma": {
+    "primary_objective": "maximize_accuracy",
+    "hard_constraints": {
+      "latency_ms_max": 20.0,
+      "accuracy_min": 0.95
+    },
+    "soft_constraints": {}
+  },
+  "A": [
+    {
+      "action_id": "act_003",
+      "action_type": "evidence",
+      "name": "eval_low_fidelity",
+      "rationale": "\u00c9valuation initiale",
+      "timestamp": "2026-09-18T10:00:58.308428"
+    }
+  ],
+  "E": [
+    {
+      "evidence_id": "ev_003",
+      "evidence_type": "accuracy",
+      "value": 0.92,
+      "provenance": "MEAS",
+      "confidence": 0.94,
+      "source": "test_set"
+    }
+  ],
+  "U": {
+    "per_metric": {
+      "accuracy": 0.03
+    },
+    "overall": 0.03,
+    "unresolved_conflicts": []
+  },
+  "R": {
+    "per_constraint": {
+      "accuracy_min": 0.03
+    },
+    "overall": 0.03,
+    "acceptable": false
+  },
+  "Alt": [
+    {
+      "design_id": "ecg_hybrid_8bit",
+      "reason_rejected": "Co\u00fbt plus \u00e9lev\u00e9",
+      "metrics": {
+        "accuracy": 0.961
+      }
+    }
+  ],
+  "Dec": {
+    "design_id": "ecg_snn_2bit",
+    "decision": "REJECT",
+    "justification": "Accuracy 0.920 < 0.95 requis"
+  },
+  "CF": [
+    {
+      "counterfactual_id": "cf_002a",
+      "description": "Si accuracy_min \u00e9tait 0.91",
+      "original_outcome": "rejet\u00e9",
+      "counterfactual_outcome": "accept\u00e9",
+      "changed_condition": "accuracy_min: 0.95\u21920.91",
+      "valid": true
+    },
+    {
+      "counterfactual_id": "cf_002b",
+      "description": "Si design avait ECC",
+      "original_outcome": "rejet\u00e9",
+      "counterfactual_outcome": "accept\u00e9",
+      "changed_condition": "has_protection: False\u2192True",
+      "valid": true
+    },
+    {
+      "counterfactual_id": "cf_002c",
+      "description": "Si m\u00e9moire rel\u00e2ch\u00e9e",
+      "original_outcome": "rejet\u00e9",
+      "counterfactual_outcome": "toujours rejet\u00e9",
+      "changed_condition": "memory: 32\u219264",
+      "valid": true
+    }
+  ],
+  "git_commit": "3b703758",
+  "hash": "ef0f76595f961c19"
+}

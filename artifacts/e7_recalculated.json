@@ -1,0 +1,76 @@
+{
+  "dcr_full": 0.94,
+  "formula": "D_degrad = (DCR_full - DCR_ablation) / DCR_full",
+  "results": [
+    {
+      "ablation": "A4_FIXED_CONTRACT",
+      "dcr": 0.47,
+      "d_degrad": 0.5,
+      "d_degrad_pct": 50.0,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A7_NO_SECURITY",
+      "dcr": 0.57,
+      "d_degrad": 0.3936,
+      "d_degrad_pct": 39.36,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A6_NO_DOMAIN_SHIFT",
+      "dcr": 0.6,
+      "d_degrad": 0.3617,
+      "d_degrad_pct": 36.17,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A2_NO_UNCERTAINTY",
+      "dcr": 0.63,
+      "d_degrad": 0.3298,
+      "d_degrad_pct": 32.98,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A5_NO_RELIABILITY",
+      "dcr": 0.67,
+      "d_degrad": 0.2872,
+      "d_degrad_pct": 28.72,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A1_NO_ADAPTIVE",
+      "dcr": 0.7,
+      "d_degrad": 0.2553,
+      "d_degrad_pct": 25.53,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A3_NO_PROVENANCE",
+      "dcr": 0.7,
+      "d_degrad": 0.2553,
+      "d_degrad_pct": 25.53,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A10_NO_EVI",
+      "dcr": 0.77,
+      "d_degrad": 0.1809,
+      "d_degrad_pct": 18.09,
+      "category": "CRITICAL"
+    },
+    {
+      "ablation": "A8_NO_ASSURANCE",
+      "dcr": 0.83,
+      "d_degrad": 0.117,
+      "d_degrad_pct": 11.7,
+      "category": "IMPORTANT"
+    },
+    {
+      "ablation": "A9_NO_VALIDITY",
+      "dcr": 0.83,
+      "d_degrad": 0.117,
+      "d_degrad_pct": 11.7,
+      "category": "IMPORTANT"
+    }
+  ]
+}

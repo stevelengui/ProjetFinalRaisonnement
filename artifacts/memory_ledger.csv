@@ -1,0 +1,18 @@
+component,description,value_bytes,value_kib,provenance,method,is_peak,is_persistent,memory_type
+M_weights,Poids quantifiés (int8_t),7651,7.47,DER_FROM_ARTIFACTS,Somme des arrays depuis model_weights.h,False,True,Flash
+M_activation_peak,Activations peak (int32_t buffers),11014,10.76,DER,Calcul depuis BUFFER_SIZES,True,False,SRAM
+M_state,État LSTM + SNN,792,0.77,DER,24 (LSTM) + 768 (SNN),False,True,SRAM
+M_runtime,Stack + heap + temp,2560,2.5,ESTIMATED,Estimation,True,False,SRAM
+M_code,Code machine (.text + .data),12288,12.0,ESTIMATED,Estimation,False,True,Flash
+
+=== TOTALS ===
+M_weights (Flash),,7651,7.47
+M_code (Flash),,12288,12.0
+Total Flash,,19939,19.47
+
+SRAM peak,,11014,10.76
+SRAM persistent,,792,0.77
+SRAM total,,11806,11.53
+
+NOTE: M_total = Flash + SRAM n'est PAS une somme valide
+Utiliser M_SRAM_peak et M_Flash séparément

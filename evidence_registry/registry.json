@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-09-18T09:27:50.666181",
+  "total_entries": 3,
+  "entries": [
+    {
+      "result_id": "ecg_real_params_001",
+      "experiment": "E0",
+      "rq": "RQ1",
+      "design_id": "ecg_hybrid_8bit",
+      "dataset": "N/A",
+      "split": "N/A",
+      "seed": 42,
+      "platform": "RV32X",
+      "clock_mhz": 120,
+      "quantization_bits": 8,
+      "evidence_type": "memory",
+      "value": 7651.0,
+      "unit": "parameters",
+      "provenance": "DER",
+      "method": "Direct count from C array declarations in model_weights.h",
+      "uncertainty": 0,
+      "uncertainty_type": "none",
+      "n_samples": 1,
+      "assumptions": [
+        "int8_t = 1 byte per parameter",
+        "Scales are int32_t but not counted as weights",
+        "Counted only learnable parameters"
+      ],
+      "git_commit": "3b703758",
+      "timestamp": "2026-09-18T09:27:50.650977",
+      "artifact_path": "firmware/model/model_weights.h"
+    },
+    {
+      "result_id": "ecg_real_M_weights_001",
+      "experiment": "E0",
+      "rq": "RQ1",
+      "design_id": "ecg_hybrid_8bit",
+      "dataset": "N/A",
+      "split": "N/A",
+      "seed": 42,
+      "platform": "RV32X",
+      "clock_mhz": 120,
+      "quantization_bits": 8,
+      "evidence_type": "memory",
+      "value": 7651.0,
+      "unit": "bytes",
+      "provenance": "DER",
+      "method": "Sum of array sizes from model_weights.h",
+      "uncertainty": 0,
+      "uncertainty_type": "none",
+      "n_samples": 1,
+      "assumptions": [
+        "All arrays are int8_t"
+      ],
+      "git_commit": "3b703758",
+      "timestamp": "2026-09-18T09:27:50.656977",
+      "artifact_path": "firmware/model/model_weights.h"
+    },
+    {
+      "result_id": "ecg_real_M_total_001",
+      "experiment": "E0",
+      "rq": "RQ1",
+      "design_id": "ecg_hybrid_8bit",
+      "dataset": "N/A",
+      "split": "N/A",
+      "seed": 42,
+      "platform": "RV32X",
+      "clock_mhz": 120,
+      "quantization_bits": 8,
+      "evidence_type": "memory",
+      "value": 29697.0,
+      "unit": "bytes",
+      "provenance": "DER",
+      "method": "Sum of M_weights + M_activation + M_state + M_runtime + M_code",
+      "uncertainty": 0,
+      "uncertainty_type": "none",
+      "n_samples": 1,
+      "assumptions": [
+        "M_runtime estimated at 2048 bytes",
+        "M_code estimated at 8192 bytes"
+      ],
+      "git_commit": "3b703758",
+      "timestamp": "2026-09-18T09:27:50.661959",
+      "artifact_path": "evidence_registry/memory_reports_real.json"
+    }
+  ]
+}

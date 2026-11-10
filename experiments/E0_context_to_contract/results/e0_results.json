@@ -1,0 +1,1294 @@
+{
+  "experiment": "E0",
+  "rq": "RQ1",
+  "timestamp": "2026-11-10T13:16:04.527620",
+  "scenarios_count": 30,
+  "metrics": {
+    "contract_accuracy": 0.991,
+    "primary_objective_accuracy": 1.0,
+    "missing_info_detection_rate": 1.0,
+    "missing_info_precision": 1.0,
+    "decision_change_rate": 0.133,
+    "reliability_transition_valid": true,
+    "clarification_requests": 3,
+    "total_contexts": 30,
+    "correct_objectives": 30
+  },
+  "reliability_transition_test": {
+    "test": "reliability_preference_to_hard",
+    "low_risk_context": "C01",
+    "high_risk_context": "C06",
+    "reliability_in_low_constraints": false,
+    "reliability_in_high_constraints": true,
+    "transition_valid": true,
+    "expected": "False \u2192 True",
+    "actual": "False \u2192 True",
+    "status": "PASS"
+  },
+  "perturbation_analysis": {
+    "total_perturbations": 120,
+    "consequences_summary": {
+      "total_comparisons": 120,
+      "decision_changes": 24,
+      "change_rate": 0.2,
+      "by_change_type": {
+        "no_change": 96,
+        "objective_change": 12,
+        "preference_to_hard": 12
+      },
+      "high_impact": 24
+    }
+  },
+  "per_context_results": [
+    {
+      "context_id": "C01",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C01",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C01",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "accuracy_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C01",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": true
+    },
+    {
+      "context_id": "C02",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C02",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 10.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C02",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 10.0,
+          "accuracy_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C02",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C03",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C03",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 128.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C03",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "memory_kib_max": 128.0,
+          "accuracy_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C03",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C04",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C04",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 20.0,
+          "accuracy_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C04",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "power_mw_max": 20.0,
+          "accuracy_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C04",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C05",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C05",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.98
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C05",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "accuracy_min": 0.98
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C05",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C06",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C06",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 10.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.97,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C06",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 10.0,
+          "accuracy_min": 0.97,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C06",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": true
+    },
+    {
+      "context_id": "C07",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C07",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 5.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.97,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C07",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 5.0,
+          "accuracy_min": 0.97,
+          "reliability_min": 0.98
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C07",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 0.8666666666666667,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C08",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C08",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 15.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.99,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C08",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 15.0,
+          "accuracy_min": 0.99,
+          "reliability_min": 0.98
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C08",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 0.8666666666666667,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C09",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C09",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "latency_ms_max": 30.0,
+          "memory_kib_max": 256.0,
+          "power_mw_max": 10.0,
+          "accuracy_min": 0.96,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C09",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "power_mw_max": 10.0,
+          "accuracy_min": 0.96,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C09",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C10",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C10",
+        "primary_objective": "maximize_security",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.96,
+          "reliability_min": 0.95,
+          "security_asr_max": 0.05
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C10",
+        "primary_objective": "maximize_security",
+        "hard_constraints": {
+          "accuracy_min": 0.96,
+          "reliability_min": 0.95,
+          "security_asr_max": 0.05
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C10",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C11",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C11",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.93
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C11",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "accuracy_min": 0.93
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C11",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": true
+    },
+    {
+      "context_id": "C12",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C12",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.93
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C12",
+        "primary_objective": "minimize_latency",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "accuracy_min": 0.93
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C12",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C13",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C13",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 128.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.93
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C13",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "memory_kib_max": 128.0,
+          "accuracy_min": 0.93
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C13",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C14",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C14",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 30.0,
+          "accuracy_min": 0.93
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C14",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "power_mw_max": 30.0,
+          "accuracy_min": 0.93
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C14",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C15",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C15",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.96
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C15",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "accuracy_min": 0.96
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C15",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C16",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C16",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 30.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C16",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 30.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C16",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": true
+    },
+    {
+      "context_id": "C17",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C17",
+        "primary_objective": "maximize_reliability",
+        "hard_constraints": {
+          "latency_ms_max": 40.0,
+          "memory_kib_max": 256.0,
+          "power_mw_max": 80.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C17",
+        "primary_objective": "maximize_reliability",
+        "hard_constraints": {
+          "latency_ms_max": 40.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C17",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C18",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C18",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.98,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C18",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "accuracy_min": 0.98,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C18",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C19",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C19",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "latency_ms_max": 60.0,
+          "memory_kib_max": 256.0,
+          "power_mw_max": 20.0,
+          "accuracy_min": 0.94,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C19",
+        "primary_objective": "minimize_energy",
+        "hard_constraints": {
+          "power_mw_max": 20.0,
+          "accuracy_min": 0.94,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C19",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C20",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C20",
+        "primary_objective": "maximize_security",
+        "hard_constraints": {
+          "latency_ms_max": 40.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95,
+          "security_asr_max": 0.05
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C20",
+        "primary_objective": "maximize_security",
+        "hard_constraints": {
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95,
+          "security_asr_max": 0.05
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C20",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C21",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C21",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C21",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C21",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C22",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C22",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 40.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.94,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C22",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 40.0,
+          "accuracy_min": 0.94,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C22",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C23",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C23",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.96,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C23",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 20.0,
+          "accuracy_min": 0.96,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C23",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C24",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C24",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 100.0,
+          "accuracy_min": 0.93,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C24",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "accuracy_min": 0.93,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C24",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C25",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C25",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 25.0,
+          "memory_kib_max": 512.0,
+          "power_mw_max": 50.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": null
+      },
+      "reference_contract": {
+        "context_id": "C25",
+        "primary_objective": "maximize_robustness",
+        "hard_constraints": {
+          "latency_ms_max": 25.0,
+          "accuracy_min": 0.95,
+          "reliability_min": 0.95
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C25",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C26",
+      "generated_contract": {
+        "status": "CLARIFICATION_REQUIRED",
+        "context_id": "C26",
+        "primary_objective": "request_clarification",
+        "hard_constraints": {},
+        "preferences": {},
+        "assumptions": [],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": {
+          "missing_fields": [
+            "max_latency_ms"
+          ],
+          "severity": "blocking",
+          "questions": [
+            "Quel est le budget de latence maximal acceptable (en ms) ? (domaine: medical)"
+          ]
+        }
+      },
+      "reference_contract": {
+        "context_id": "C26",
+        "primary_objective": "request_clarification",
+        "hard_constraints": {},
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C26",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": true,
+      "clarification_severity": "blocking",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [
+        "max_latency_ms"
+      ],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C27",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C27",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "memory_kib_max": 512.0,
+          "accuracy_min": 0.93
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": {
+          "missing_fields": [
+            "max_power_mw"
+          ],
+          "severity": "warning",
+          "questions": [
+            "Quel est le budget de puissance maximal (en mW) ? (domaine: industrial)"
+          ]
+        }
+      },
+      "reference_contract": {
+        "context_id": "C27",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "accuracy_min": 0.93
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C27",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": "warning",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [
+        "max_power_mw"
+      ],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C28",
+      "generated_contract": {
+        "status": "CLARIFICATION_REQUIRED",
+        "context_id": "C28",
+        "primary_objective": "request_clarification",
+        "hard_constraints": {},
+        "preferences": {},
+        "assumptions": [],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": {
+          "missing_fields": [
+            "min_accuracy"
+          ],
+          "severity": "blocking",
+          "questions": [
+            "Quelle est la pr\u00e9cision minimale requise ? (domaine: medical)"
+          ]
+        }
+      },
+      "reference_contract": {
+        "context_id": "C28",
+        "primary_objective": "request_clarification",
+        "hard_constraints": {},
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C28",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": true,
+      "clarification_severity": "blocking",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [
+        "min_accuracy"
+      ],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C29",
+      "generated_contract": {
+        "status": "SUCCESS",
+        "context_id": "C29",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "accuracy_min": 0.93
+        },
+        "preferences": {},
+        "assumptions": [
+          "Standard operating conditions"
+        ],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": {
+          "missing_fields": [
+            "max_memory_kb",
+            "max_power_mw"
+          ],
+          "severity": "warning",
+          "questions": [
+            "Quelle est la quantit\u00e9 de m\u00e9moire disponible (en KB) ? (domaine: industrial)",
+            "Quel est le budget de puissance maximal (en mW) ? (domaine: industrial)"
+          ]
+        }
+      },
+      "reference_contract": {
+        "context_id": "C29",
+        "primary_objective": "maximize_accuracy",
+        "hard_constraints": {
+          "latency_ms_max": 50.0,
+          "accuracy_min": 0.93
+        },
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C29",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": false,
+      "clarification_severity": "warning",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [
+        "max_memory_kb",
+        "max_power_mw"
+      ],
+      "decision_changed": false
+    },
+    {
+      "context_id": "C30",
+      "generated_contract": {
+        "status": "CLARIFICATION_REQUIRED",
+        "context_id": "C30",
+        "primary_objective": "request_clarification",
+        "hard_constraints": {},
+        "preferences": {},
+        "assumptions": [],
+        "risks": [],
+        "validity_conditions": [],
+        "clarification": {
+          "missing_fields": [
+            "threat_context"
+          ],
+          "severity": "blocking",
+          "questions": [
+            "Quel est le niveau de menace attendu (none/low/medium/high) ? (domaine: medical)"
+          ]
+        }
+      },
+      "reference_contract": {
+        "context_id": "C30",
+        "primary_objective": "request_clarification",
+        "hard_constraints": {},
+        "manual_verification": "V\u00e9rifi\u00e9 manuellement pour C30",
+        "expected_feasibility": "PASS"
+      },
+      "contract_accuracy": 1.0,
+      "primary_objective_correct": true,
+      "clarification_requested": true,
+      "clarification_severity": "blocking",
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "missing_info": [
+        "threat_context"
+      ],
+      "decision_changed": false
+    }
+  ]
+}

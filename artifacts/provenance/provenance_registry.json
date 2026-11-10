@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-11-03T15:57:36.019299",
+  "framework": "LLM-NAS AutoCoDesign",
+  "version": "2.1.0",
+  "experiments": {
+    "E0": {
+      "name": "Context-to-Contract (RQ1)",
+      "cases_file": "experiments/E0_context_to_contract/scenarios.py",
+      "cases_file_hash": "d0e7351171ea38bd",
+      "n_cases": 30,
+      "seeds": [
+        42
+      ],
+      "oracle": "ground_truth_contracts.py (manual verification)",
+      "script": "scripts/run_e0.sh",
+      "script_hash": "fcd302f3899a19ad",
+      "denominators": {
+        "contract_accuracy": 30,
+        "primary_objective_accuracy": 30,
+        "missing_info_detection": 5
+      },
+      "results_file": "experiments/E0_context_to_contract/results/e0_results.json",
+      "results_exists": true
+    },
+    "E1": {
+      "name": "Adaptive Evaluation-Fidelity (RQ2)",
+      "cases_file": "experiments/E1_adaptive_fidelity/test_cases.py",
+      "cases_file_hash": "8cea9363ef4182b9",
+      "n_cases": 40,
+      "seeds": [
+        42
+      ],
+      "oracle": "expected_verdict (computed from ground_truth)",
+      "script": "scripts/run_e1.sh",
+      "script_hash": "62949093627bde69",
+      "denominators": {
+        "agreement_rate": 40,
+        "cost": 40,
+        "critical_accuracy": 19
+      },
+      "results_file": "experiments/E1_adaptive_fidelity/results/e1_results.json",
+      "results_exists": true
+    },
+    "E2": {
+      "name": "Lifecycle Replay (RQ5)",
+      "cases_file": "experiments/E2_lifecycle_replay/lifecycle_perturbations.py",
+      "cases_file_hash": "eb20274d4ef05701",
+      "n_cases": 10,
+      "seeds": [
+        42
+      ],
+      "oracle": "expected_intervention",
+      "script": "scripts/run_e2.sh",
+      "script_hash": "c6491342aba7e0ae",
+      "denominators": {
+        "intervention_correctness": 10
+      },
+      "results_file": "experiments/E2_lifecycle_replay/results/e2_results.json",
+      "results_exists": true
+    },
+    "E3": {
+      "name": "Fault Injection (RQ3)",
+      "cases_file": "experiments/E3_fault_injection/candidate_designs.py",
+      "cases_file_hash": "c1641f74b6bfd76b",
+      "n_cases": 800,
+      "seeds": [
+        42
+      ],
+      "oracle": "nominal_accuracy + fault_sensitivity",
+      "script": "scripts/run_e3.sh",
+      "script_hash": "ae714a4b6dd1192b",
+      "denominators": {
+        "p_sdc": 200,
+        "delta_a_f": 200
+      },
+      "results_file": "experiments/E3_fault_injection/results/e3_results.json",
+      "results_exists": true
+    },
+    "E4": {
+      "name": "Domain-Shift (RQ3)",
+      "cases_file": "experiments/E4_domain_shift/domain_shift_scenarios.py",
+      "cases_file_hash": "5d75b2a0dd95b6bc",
+      "n_cases": 6,
+      "seeds": [
+        42
+      ],
+      "oracle": "expected_intervention",
+      "script": "scripts/run_e4.sh",
+      "script_hash": "64ef9f8084b8ae01",
+      "denominators": {
+        "method_correctness": 6
+      },
+      "results_file": "experiments/E4_domain_shift/results/e4_results.json",
+      "results_exists": true
+    },
+    "E5": {
+      "name": "Security (RQ3)",
+      "cases_file": "experiments/E5_security/security_designs.py",
+      "cases_file_hash": "a933701d12b6c3ab",
+      "n_cases": 25,
+      "seeds": [
+        42
+      ],
+      "oracle": "asr_threshold (0.20)",
+      "script": "scripts/run_e5.sh",
+      "script_hash": "674ca4e79a2ac2e8",
+      "denominators": {
+        "decision_correctness": 25
+      },
+      "results_file": "experiments/E5_security/results/e5_results.json",
+      "results_exists": true
+    },
+    "E6": {
+      "name": "Decision Records (RQ4)",
+      "cases_file": "experiments/E6_decision_records/decision_record.py",
+      "cases_file_hash": "d7a29bf693655183",
+      "n_cases": 3,
+      "seeds": [
+        42
+      ],
+      "oracle": "counterfactual_tests",
+      "script": "scripts/run_e6.sh",
+      "script_hash": "39a43473cd7aa363",
+      "denominators": {
+        "audit_score": 6
+      },
+      "results_file": "experiments/E6_decision_records/results/e6_results.json",
+      "results_exists": true
+    },
+    "E7": {
+      "name": "Ablation (Cross-RQ)",
+      "cases_file": "experiments/E7_ablation/ablation_configs.py",
+      "cases_file_hash": "a9d503a7412cd739",
+      "n_cases": 30,
+      "seeds": [
+        42
+      ],
+      "oracle": "dcr_full (0.94)",
+      "script": "scripts/run_e7.sh",
+      "script_hash": "4344fe2606d44f23",
+      "denominators": {
+        "dcr": 30
+      },
+      "results_file": "experiments/E7_ablation/results/e7_results.json",
+      "results_exists": true
+    }
+  }
+}

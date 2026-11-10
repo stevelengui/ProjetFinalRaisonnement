@@ -1,0 +1,149 @@
+{
+  "experiment": "E4",
+  "rq": "RQ3",
+  "timestamp": "2026-09-18T09:41:56.794910",
+  "scenarios_count": 6,
+  "classifications": [
+    {
+      "scenario_id": "DS01",
+      "severity": "D0_nominal",
+      "score": 0.0
+    },
+    {
+      "scenario_id": "DS02",
+      "severity": "D1_light",
+      "score": 0.09000000000000002
+    },
+    {
+      "scenario_id": "DS03",
+      "severity": "D1_light",
+      "score": 0.12000000000000001
+    },
+    {
+      "scenario_id": "DS04",
+      "severity": "D1_light",
+      "score": 0.23
+    },
+    {
+      "scenario_id": "DS05",
+      "severity": "D2_moderate",
+      "score": 0.28
+    },
+    {
+      "scenario_id": "DS06",
+      "severity": "D3_severe",
+      "score": 0.5800000000000001
+    }
+  ],
+  "selections": [
+    {
+      "scenario_id": "DS01",
+      "selected_method": "None",
+      "valid": true,
+      "violations": [],
+      "ranking": [
+        [
+          "None",
+          0.7
+        ]
+      ]
+    },
+    {
+      "scenario_id": "DS02",
+      "selected_method": "Recalibrate",
+      "valid": true,
+      "violations": [],
+      "ranking": [
+        [
+          "Recalibrate",
+          0.78
+        ]
+      ]
+    },
+    {
+      "scenario_id": "DS03",
+      "selected_method": "Recalibrate",
+      "valid": true,
+      "violations": [],
+      "ranking": [
+        [
+          "Recalibrate",
+          0.78
+        ],
+        [
+          "Precision Change",
+          0.406
+        ]
+      ]
+    },
+    {
+      "scenario_id": "DS04",
+      "selected_method": "MAML",
+      "valid": true,
+      "violations": [],
+      "ranking": [
+        [
+          "MAML",
+          0.885
+        ],
+        [
+          "Fine-Tune",
+          0.505
+        ],
+        [
+          "Precision Change",
+          0.406
+        ]
+      ]
+    },
+    {
+      "scenario_id": "DS05",
+      "selected_method": "MAML",
+      "valid": true,
+      "violations": [],
+      "ranking": [
+        [
+          "MAML",
+          0.885
+        ],
+        [
+          "Switch Subnetwork",
+          0.86
+        ],
+        [
+          "Fine-Tune",
+          0.505
+        ],
+        [
+          "Precision Change",
+          0.406
+        ]
+      ]
+    },
+    {
+      "scenario_id": "DS06",
+      "selected_method": "Remap",
+      "valid": false,
+      "violations": [
+        "Memory 38.4 > 32.0",
+        "Reliability 0.81 < 0.85"
+      ],
+      "ranking": [
+        [
+          "Remap",
+          0.96
+        ]
+      ]
+    }
+  ],
+  "decisive_test": {
+    "maml_violation_detected": true,
+    "maml_accuracy": 0.9441824999999999,
+    "maml_memory_kb": 33.599999999999994,
+    "maml_violations": [
+      "Memory 33.6 > 32.0"
+    ],
+    "alternative_method": "Switch Subnetwork",
+    "alternative_valid": true
+  }
+}

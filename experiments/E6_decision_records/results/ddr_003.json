@@ -1,0 +1,87 @@
+{
+  "record_id": "ddr_003",
+  "design_id": "vibration_hybrid_8bit",
+  "timestamp": "2026-09-18T10:00:58.311335",
+  "C": {
+    "context_id": "ctx_industrial_001",
+    "domain": "industrial",
+    "environment": "factory",
+    "safety_relevant": false,
+    "requirements": {}
+  },
+  "Gamma": {
+    "primary_objective": "minimize_latency",
+    "hard_constraints": {
+      "latency_ms_max": 20.0,
+      "accuracy_min": 0.93
+    },
+    "soft_constraints": {}
+  },
+  "A": [
+    {
+      "action_id": "act_004",
+      "action_type": "evidence",
+      "name": "eval_low_fidelity",
+      "rationale": "\u00c9valuation rapide",
+      "timestamp": "2026-09-18T10:00:58.311382"
+    }
+  ],
+  "E": [
+    {
+      "evidence_id": "ev_004",
+      "evidence_type": "latency",
+      "value": 6.8,
+      "provenance": "SUR",
+      "confidence": 0.75,
+      "source": "surrogate_model"
+    }
+  ],
+  "U": {
+    "per_metric": {
+      "latency": 0.15
+    },
+    "overall": 0.15,
+    "unresolved_conflicts": [
+      "latency_conflict"
+    ]
+  },
+  "R": {
+    "per_constraint": {},
+    "overall": 0.1,
+    "acceptable": false
+  },
+  "Alt": [],
+  "Dec": {
+    "design_id": "vibration_hybrid_8bit",
+    "decision": "DEFER",
+    "justification": "Incertitude \u00e9lev\u00e9e, escalade n\u00e9cessaire"
+  },
+  "CF": [
+    {
+      "counterfactual_id": "cf_003a",
+      "description": "Si incertitude faible",
+      "original_outcome": "DEFER",
+      "counterfactual_outcome": "ACCEPT",
+      "changed_condition": "uncertainty: 0.15\u21920.03",
+      "valid": true
+    },
+    {
+      "counterfactual_id": "cf_003b",
+      "description": "Si \u00e9valuation HF dispo",
+      "original_outcome": "DEFER",
+      "counterfactual_outcome": "ACCEPT",
+      "changed_condition": "hf: False\u2192True",
+      "valid": true
+    },
+    {
+      "counterfactual_id": "cf_003c",
+      "description": "Si preuves contradictoires",
+      "original_outcome": "DEFER",
+      "counterfactual_outcome": "Conflit",
+      "changed_condition": "contradictory: False\u2192True",
+      "valid": true
+    }
+  ],
+  "git_commit": "3b703758",
+  "hash": "8d61ae8eed604d8d"
+}

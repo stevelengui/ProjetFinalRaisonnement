@@ -1,0 +1,23 @@
+{
+  "model_id": "ecg_hybrid_8bit",
+  "provenance": "MIXED",
+  "M_weights": 7651,
+  "M_activation_peak": 11014,
+  "M_state": 792,
+  "M_runtime": 2560,
+  "M_code": 12288,
+  "M_total": 34305,
+  "M_weights_kib": 7.47,
+  "M_activation_peak_kib": 10.76,
+  "M_state_kib": 0.77,
+  "M_runtime_kib": 2.5,
+  "M_code_kib": 12.0,
+  "M_total_kib": 33.5,
+  "notes": [
+    "M_weights: compt\u00e9 depuis model_weights.h",
+    "M_activation_peak: calcul\u00e9 depuis buffers",
+    "M_state: calcul\u00e9 depuis LSTM+SNN",
+    "M_runtime: 2560 bytes (mesur\u00e9/estim\u00e9)",
+    "M_code: 12288 bytes (mesur\u00e9/estim\u00e9)"
+  ]
+}
