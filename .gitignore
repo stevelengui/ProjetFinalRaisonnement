@@ -1,16 +1,12 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.so
+.Python
 venv/
 env/
-.venv/
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
+ENV/
 
 # IDE
 .vscode/
@@ -18,30 +14,19 @@ build/
 *.swp
 *.swo
 
-# Projets générés
-generated_projects/
-*.zip
-*.tar.gz
-
-# Logs
-logs/
-*.log
-
-# Cache
-.cache/
-.pytest_cache/
-.coverage
-htmlcov/
-
 # OS
 .DS_Store
 Thumbs.db
 
-# Données sensibles
-.env
-*.key
-*.pem
-
-# Backup
+# Backups
 *.bak
-*.old
+*.bak.*
+*.orig
+
+# Logs
+*.log
+
+# Dossiers générés
+generated_projects/
+artifacts/generated_code/test_inference
+artifacts/generated_code/test_inference_riscv
