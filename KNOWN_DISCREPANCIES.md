@@ -12,7 +12,7 @@
 This document lists every numerical discrepancy detected between:
 
 - **MS** — the frozen manuscript of 18 November 2026;
-- **C-CODE** — the real C implementation (`firmware/model/model.h`, `model.c`, `model_weights.h`, `model_weights.c`), which is the **ground truth** for the deployed model;
+- **C-CODE** — the real C implementation (`firmware/model/model_weights.h`, `model_weights.c`, `model.c`, `model.h`), which is the **ground truth** for the deployed model;
 - **PY-SIM** — the Python simulator `llm_nas/hybrid_model.py`;
 - **README** — the public repository README.
 
@@ -23,9 +23,9 @@ Each discrepancy is documented with:
 4. the recommended action (documentation only at this stage — no manuscript edit).
 
 Verification scripts are provided in `scripts/`:
-- `param_ledger.py` — parameter count per layer, from `llm_nas/model_weights.h`;
-- `memory_ledger.py` — Flash / SRAM / weights breakdown, from `firmware/model/model.h` and `llm_nas/model_weights.h`;
-- `ops_ledger.py` — operation (MAC) count per layer, from `TOTAL_OPS` in `llm_nas/model_weights.h`.
+- `param_ledger.py` — parameter count per layer, from `model_weights.h` / `model_weights.c`;
+- `memory_ledger.py` — Flash / SRAM / weights / activations / state / stack / heap breakdown, from `model.h` and `model.c`;
+- `ops_ledger.py` — operation (MAC) count per layer, from `TOTAL_OPS` in `model_weights.h`.
 
 All ledgers are machine-generated; their outputs are stored in `evidence_registry/ledgers/`.
 
@@ -49,7 +49,7 @@ All ledgers are machine-generated; their outputs are stored in `evidence_registr
 
 ### 1.2 Independently verified value
 
-From `llm_nas/model_weights.h`, the declared array sizes are:
+From `model_weights.h`, the declared array sizes are:
 
 | Array | Size | Elements |
 |---|---|---|
@@ -74,7 +74,7 @@ From `llm_nas/model_weights.h`, the declared array sizes are:
 | **TOTAL** | | **7,651** |
 
 **Verified value: 7,651 parameters** (all `int8_t`, 8-bit quantized).  
-Method: exact sum of declared array sizes in `llm_nas/model_weights.h`. Reproducible with `scripts/param_ledger.py` (output: `evidence_registry/ledgers/param_ledger.csv`).
+Method: exact sum of declared array sizes in `model_weights.h`. Reproducible with `scripts/param_ledger.py`.
 
 ### 1.3 Why the manuscript text says 9,317
 
@@ -101,7 +101,7 @@ The 9,317 figure is the **sum of layer counts as written in the manuscript**, no
 
 `hybrid_model.py` sets `self.total_parameters = 373128`. This is the **operation count (MACs)**, not the parameter count. The same file confirms this indirectly: the sum of `LayerStats.operation_count` across the six layers is exactly **373,128**, while the sum of `LayerStats.parameters` is 9,883 (itself inconsistent with the real model).
 
-The file also contains internal draft comments that explicitly acknowledge the confusion ("*Wait, article says 373,128*", "*this suggests much larger hidden dimensions*"). These comments must be removed from the published code and their content is preserved here for historical traceability.
+The file also contains internal draft comments (lines 48–68) that explicitly acknowledge the confusion ("*Wait, article says 373,128*", "*this suggests much larger hidden dimensions*"). These comments must be removed from the published code and their content is preserved here for historical traceability.
 
 ### 1.5 Probable cause
 
@@ -126,16 +126,16 @@ The file also contains internal draft comments that explicitly acknowledge the c
 |---|---|---|---|---|
 | MS, Section VI-A | 7.47 KiB | 19.47 KiB | 11.53 KiB | 31.00 KiB (sum) |
 | MS, Table I (`ecg_hybrid_8bit`) | — | — | — | **29.0 KiB** |
-| PY-SIM, `total_memory_bytes` | 8,736 B (8.52 KiB) | — | — | 8.52 + 2.1 + 1.8 = **12.42 KiB** |
+| PY-SIM, `total_memory_bytes` | 8,736 B (8.52 KiB) | — | — | 8.52 KiB + 2.1 + 1.8 = **12.42 KiB** |
 | README (`ecg_hybrid_8bit`) | — | — | — | **24 KB** |
 
 Four different totals for the same design: **29.0 / 31.0 / 12.42 / 24**.
 
 ### 2.2 Independently verified values from C-CODE
 
-**Weights (Flash):** 7,651 `int8_t` = **7,651 bytes = 7.472 KiB**. ✅ Matches MS Section VI-A (7.47 KiB).
+**Weights (Flash):** 7,651 `int8_t` = **7,651 bytes = 7.47 KiB**. ✅ Matches MS Section VI-A.
 
-**SRAM (buffers declared in `firmware/model/model.h`):**
+**SRAM (buffers declared in `model.h`):**
 
 | Buffer | Elements | Element size | Bytes |
 |---|---|---|---|
@@ -153,29 +153,27 @@ Four different totals for the same design: **29.0 / 31.0 / 12.42 / 24**.
 | `temperature` | 1 | 2 | 2 |
 | `total_cycles` | 1 | 4 | 4 |
 | `inference_count` | 1 | 4 | 4 |
-| **Sum of struct fields** | | | **11,025 B = 10.767 KiB** |
+| **Sum of struct fields** | | | **11,025 B ≈ 10.77 KiB** |
 
-**Verified value: 11,025 bytes (10.767 KiB)** for the `HybridModelBuffers` struct. Reproducible with `scripts/memory_ledger.py` (output: `evidence_registry/ledgers/memory_ledger.csv`).
-
-The manuscript reports **11.53 KiB SRAM**. Difference: **0.763 KiB ≈ 781 bytes**, attributable to:
+The manuscript reports **11.53 KiB SRAM**. Difference: **0.76 KiB ≈ 778 bytes**, attributable to:
 - local arrays in `model_predict` (`spatial_features[12]`, `snn_features[24]`, `qnn_features[12]` = 48 bytes);
 - stack frame, alignment, and compiler-allocated temporaries.
 
-This is plausible and will be confirmed by `scripts/memory_ledger.py` combined with `riscv64-unknown-elf-size` on the compiled ELF (see `IMPLEMENTATION_VALIDATION.md`).
+This is plausible and will be confirmed by `scripts/memory_ledger.py` combined with `riscv64-unknown-elf-size` on the compiled ELF.
 
-**Flash (code):** MS reports 19.47 KiB total Flash, of which 7.47 KiB weights → **12.0 KiB code**. This matches `M_CODE_BYTES = 12,288` (12.000 KiB) declared in `llm_nas/model_weights.h`. It will be confirmed by `size` on the cross-compiled ELF.
+**Flash (code):** MS reports 19.47 KiB total Flash, of which 7.47 KiB weights → **12.0 KiB code**. This must be confirmed by `size` on the cross-compiled ELF (see `IMPLEMENTATION_VALIDATION.md`).
 
 ### 2.3 The 29.0 KiB vs 31.0 KiB discrepancy (Table I vs Section VI-A)
 
 - Section VI-A: Flash 19.47 + SRAM 11.53 = **31.00 KiB**.
 - Table I: **29.0 KiB** for `ecg_hybrid_8bit`.
 
-Difference: **2.0 KiB**. Probable causes (to be confirmed by `memory_ledger.py` + ELF):
+Difference: **2.0 KiB**. Probable causes (to be confirmed by `memory_ledger.py`):
 - Table I may exclude the stack/heap or a reserved region;
 - Table I may have been rounded or computed from an earlier model revision;
 - Section VI-A may double-count a buffer.
 
-**Verified value for the struct alone: 10.767 KiB SRAM + 7.472 KiB weights = 18.239 KiB.** Neither 29.0 nor 31.0 is directly reproducible from the C declarations alone; both require the code size and stack allocation from the compiled binary. This is documented here as an **open item** for Stage 6.2, to be closed by the ELF `size` output.
+**Verified value for the struct alone: 10.77 KiB SRAM + 7.47 KiB weights = 18.24 KiB.** Neither 29.0 nor 31.0 is directly reproducible from the C declarations alone; both require the code size and stack allocation from the compiled binary. This is documented here as an **open item** for Stage 6.2, to be closed by the ELF `size` output.
 
 ### 2.4 PY-SIM and README values
 
@@ -184,9 +182,11 @@ Difference: **2.0 KiB**. Probable causes (to be confirmed by `memory_ledger.py` 
 
 ### 2.5 Recommended action (documentation only)
 
-- Publish `scripts/memory_ledger.py` and its output, with the struct breakdown above (verified 11,025 B = 10.767 KiB) and the ELF-based code/stack figures.
+- Publish `scripts/memory_ledger.py` and its output, with the struct breakdown above (verified 10.77 KiB) and the ELF-based code/stack figures.
 - Document the 29.0 vs 31.0 discrepancy as an **open item**, to be resolved by the ELF `size` output.
 - In the consolidated correction list, align Table I and Section VI-A on a single accounting convention (e.g., "weights + code + declared buffers + measured stack").
+
+---
 
 ### 2.6 Two versions of `model_weights.h`
 
@@ -202,6 +202,47 @@ Two copies of `model_weights.h` exist in the repository:
 **Decision:** `llm_nas/model_weights.h` is the reference for numerical verification, because it carries the memory constants cited in the manuscript. `firmware/model/model_weights.h` is preserved unchanged for phase-1 traceability.
 
 **Reproduction:**
+
+### 2.7 Verified memory figures (memory_ledger.py)
+
+From `firmware/model/model.h` (struct `HybridModelBuffers`) and `llm_nas/model_weights.h`:
+
+| Field | Type | Elements | Bytes |
+|---|---|---|---|
+| `input_buf` | int8_t | 360 | 360 |
+| `conv1_out` | int32_t | 1,080 | 4,320 |
+| `conv2_out` | int32_t | 1,080 | 4,320 |
+| `snn_input` | int8_t | 1,056 | 1,056 |
+| `spike_train` | int8_t | 768 | 768 |
+| `lstm_state` | int8_t | 24 | 24 |
+| `router_output` | int8_t | 2 | 2 |
+| `fused_features` | int32_t | 24 | 96 |
+| `fc1_out` | int32_t | 12 | 48 |
+| `output` | int32_t | 5 | 20 |
+| `precision_mode` | uint8_t | 1 | 1 |
+| `temperature` | int16_t | 1 | 2 |
+| `total_cycles` | uint32_t | 1 | 4 |
+| `inference_count` | uint32_t | 1 | 4 |
+| **Total struct SRAM** | | | **11,025 B = 10.767 KiB** |
+
+Reconciliation against the manuscript:
+
+| Item | Value | Source |
+|---|---|---|
+| weights | 7,651 B / 7.472 KiB | `param_ledger.py` |
+| struct SRAM | 11,025 B / 10.767 KiB | `memory_ledger.py` |
+| `M_ACTIVATION_PEAK_BYTES` | 11,014 B / 10.756 KiB | `llm_nas/model_weights.h` |
+| `M_CODE_BYTES` | 12,288 B / 12.000 KiB | `llm_nas/model_weights.h` |
+| `M_RUNTIME_BYTES` | 2,560 B / 2.500 KiB | `llm_nas/model_weights.h` |
+| MS Flash (VI-A) | 19.47 KiB | MS |
+| MS SRAM (VI-A) | 11.53 KiB | MS |
+| MS total (VI-A) | 31.00 KiB | 19.47 + 11.53 |
+| MS Table I | 29.00 KiB | MS |
+| **Δ VI-A vs Table I** | **2.00 KiB** | open item |
+| **Δ struct vs MS SRAM** | **0.763 KiB** | stack/alignment, open item |
+
+The 0.763 KiB gap between the verified struct (10.767 KiB) and the manuscript SRAM (11.53 KiB) is consistent with stack frame, local arrays in `model_predict` (`spatial_features[12]`, `snn_features[24]`, `qnn_features[12]` = 48 B) and alignment padding. It will be closed by the ELF `size` output in `IMPLEMENTATION_VALIDATION.md`.
+
 ```bash
 grep -E "extern const int8_t" llm_nas/model_weights.h | sort > /tmp/a.txt
 grep -E "extern const int8_t" firmware/model/model_weights.h | sort > /tmp/b.txt
