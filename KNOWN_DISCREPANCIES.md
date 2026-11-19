@@ -321,6 +321,21 @@ The correspondence between the Python simulator and the C architecture is **not 
 - Update the README to align with the frozen manuscript (7,651 parameters, 2 domains validated, no 99 % MAML claim, no −4.1 % accuracy claim).
 - Do **not** modify the manuscript.
 
+### 5.2 Accuracy figures across phases (published vs Paper 5)
+
+The phase-1 model repositories are associated with a **published article** and their announced accuracies (97.49 % ECG, 100 % CWRU) are frozen. Paper 5 uses different figures (96.1 % ECG, 95.8 % CWRU) for its own experiments. These are **not inconsistencies** but **different evaluation contexts**:
+
+| Source | Repository | Commit | Accuracy | Context |
+|---|---|---|---|---|
+| Phase-1 published article | `ECG-Hybrid-SNN-QNN` | `69cea05` | 97.49 % | Published protocol (full model) |
+| Paper 5 (this work) | `ProjetFinalRaisonnement` | `bbbeb15` | 96.1 % | Meta-reasoning experiments (quantized 8-bit model) |
+| Phase-1 published article | `Vibration-Fault-Detection` | `b452d06` | 100 % | Published protocol (full model) |
+| Paper 5 (this work) | `ProjetFinalRaisonnement` | `bbbeb15` | 95.8 % | Meta-reasoning experiments (quantized 8-bit model) |
+
+**Additional note:** `Vibration-Fault-Detection` has an empty `model.h` at the repository root (0 byte); the real header is at `firmware/model/model.h` (1,287 bytes).
+
+**Action:** document the exact evaluation protocol used in Paper 5 (dataset split, quantization, test set) so that the difference with the published phase-1 figures is fully traceable. This is an open item for Stage 6.2.
+
 ---
 
 ## 6. Summary table of verified values
