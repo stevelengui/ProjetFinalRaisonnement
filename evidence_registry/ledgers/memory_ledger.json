@@ -1,0 +1,166 @@
+{
+  "model_h": "firmware/model/model.h",
+  "weights_h": "llm_nas/model_weights.h",
+  "struct_sram_bytes": 11025,
+  "struct_sram_kib": 10.767,
+  "expected_struct_sram_bytes": 11025,
+  "struct_matches_expected": true,
+  "manuscript": {
+    "weights_kib": 7.47,
+    "flash_kib": 19.47,
+    "sram_kib": 11.53,
+    "table1_kib": 29.0
+  },
+  "reconciliation": [
+    {
+      "item": "weights_bytes",
+      "value": 7651,
+      "source": "param_ledger.py (verified)"
+    },
+    {
+      "item": "weights_kib",
+      "value": 7.472,
+      "source": "computed"
+    },
+    {
+      "item": "struct_sram_bytes",
+      "value": 11025,
+      "source": "model.h (verified)"
+    },
+    {
+      "item": "struct_sram_kib",
+      "value": 10.767,
+      "source": "computed"
+    },
+    {
+      "item": "manuscript_flash_kib",
+      "value": 19.47,
+      "source": "MS Section VI-A"
+    },
+    {
+      "item": "manuscript_sram_kib",
+      "value": 11.53,
+      "source": "MS Section VI-A"
+    },
+    {
+      "item": "manuscript_total_VI-A_kib",
+      "value": 31.0,
+      "source": "MS Section VI-A (19.47 + 11.53)"
+    },
+    {
+      "item": "manuscript_table1_kib",
+      "value": 29.0,
+      "source": "MS Table I (ecg_hybrid_8bit)"
+    },
+    {
+      "item": "delta_VI-A_vs_table1_kib",
+      "value": 2.0,
+      "source": "computed (open item)"
+    },
+    {
+      "item": "delta_struct_vs_MS_sram_kib",
+      "value": 0.763,
+      "source": "computed (stack/alignment, open item)"
+    }
+  ],
+  "fields": [
+    {
+      "field": "input_buf",
+      "type": "int8_t",
+      "elements": 360,
+      "element_size": 1,
+      "bytes": 360
+    },
+    {
+      "field": "conv1_out",
+      "type": "int32_t",
+      "elements": 1080,
+      "element_size": 4,
+      "bytes": 4320
+    },
+    {
+      "field": "conv2_out",
+      "type": "int32_t",
+      "elements": 1080,
+      "element_size": 4,
+      "bytes": 4320
+    },
+    {
+      "field": "snn_input",
+      "type": "int8_t",
+      "elements": 1056,
+      "element_size": 1,
+      "bytes": 1056
+    },
+    {
+      "field": "spike_train",
+      "type": "int8_t",
+      "elements": 768,
+      "element_size": 1,
+      "bytes": 768
+    },
+    {
+      "field": "lstm_state",
+      "type": "int8_t",
+      "elements": 24,
+      "element_size": 1,
+      "bytes": 24
+    },
+    {
+      "field": "router_output",
+      "type": "int8_t",
+      "elements": 2,
+      "element_size": 1,
+      "bytes": 2
+    },
+    {
+      "field": "fused_features",
+      "type": "int32_t",
+      "elements": 24,
+      "element_size": 4,
+      "bytes": 96
+    },
+    {
+      "field": "fc1_out",
+      "type": "int32_t",
+      "elements": 12,
+      "element_size": 4,
+      "bytes": 48
+    },
+    {
+      "field": "output",
+      "type": "int32_t",
+      "elements": 5,
+      "element_size": 4,
+      "bytes": 20
+    },
+    {
+      "field": "precision_mode",
+      "type": "uint8_t",
+      "elements": 1,
+      "element_size": 1,
+      "bytes": 1
+    },
+    {
+      "field": "temperature",
+      "type": "int16_t",
+      "elements": 1,
+      "element_size": 2,
+      "bytes": 2
+    },
+    {
+      "field": "total_cycles",
+      "type": "uint32_t",
+      "elements": 1,
+      "element_size": 4,
+      "bytes": 4
+    },
+    {
+      "field": "inference_count",
+      "type": "uint32_t",
+      "elements": 1,
+      "element_size": 4,
+      "bytes": 4
+    }
+  ]
+}
