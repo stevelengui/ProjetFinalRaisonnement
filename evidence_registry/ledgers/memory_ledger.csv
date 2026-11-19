@@ -1,0 +1,15 @@
+field,type,elements,element_size,bytes
+input_buf,int8_t,360,1,360
+conv1_out,int32_t,1080,4,4320
+conv2_out,int32_t,1080,4,4320
+snn_input,int8_t,1056,1,1056
+spike_train,int8_t,768,1,768
+lstm_state,int8_t,24,1,24
+router_output,int8_t,2,1,2
+fused_features,int32_t,24,4,96
+fc1_out,int32_t,12,4,48
+output,int32_t,5,4,20
+precision_mode,uint8_t,1,1,1
+temperature,int16_t,1,2,2
+total_cycles,uint32_t,1,4,4
+inference_count,uint32_t,1,4,4

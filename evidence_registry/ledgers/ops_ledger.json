@@ -1,0 +1,39 @@
+{
+  "header": "llm_nas/model_weights.h",
+  "expected_total": 373128,
+  "parsed_total": 373128,
+  "match": true,
+  "layers": [
+    {
+      "macro": "CONV1_OPS",
+      "layer": "Conv1D",
+      "operations": 10800
+    },
+    {
+      "macro": "CONV2_OPS",
+      "layer": "Conv2D",
+      "operations": 6480
+    },
+    {
+      "macro": "LSTM_OPS",
+      "layer": "LSTM",
+      "operations": 350208
+    },
+    {
+      "macro": "LIF_OPS",
+      "layer": "SNN-LIF",
+      "operations": 2304
+    },
+    {
+      "macro": "FC_OPS",
+      "layer": "FC",
+      "operations": 2424
+    },
+    {
+      "macro": "ROUTER_OPS",
+      "layer": "Router",
+      "operations": 912
+    }
+  ],
+  "TOTAL_OPS_macro": "(CONV1_OPS + CONV2_OPS + LSTM_OPS + LIF_OPS + FC_OPS + ROUTER_OPS)"
+}

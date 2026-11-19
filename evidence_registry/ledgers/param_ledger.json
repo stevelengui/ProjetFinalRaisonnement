@@ -1,0 +1,107 @@
+{
+  "header": "llm_nas/model_weights.h",
+  "expected_total": 7651,
+  "parsed_total": 7651,
+  "match": true,
+  "layer_summary": {
+    "Conv1D": 36,
+    "Conv2D": 228,
+    "LSTM": 5664,
+    "Router": 470,
+    "Fusion": 888,
+    "FC1": 300,
+    "Output": 65
+  },
+  "arrays": [
+    {
+      "array": "conv1_weight",
+      "layer": "Conv1D",
+      "elements": 30
+    },
+    {
+      "array": "conv1_bias",
+      "layer": "Conv1D",
+      "elements": 6
+    },
+    {
+      "array": "conv2_weight",
+      "layer": "Conv2D",
+      "elements": 216
+    },
+    {
+      "array": "conv2_bias",
+      "layer": "Conv2D",
+      "elements": 12
+    },
+    {
+      "array": "lstm_weight_ih",
+      "layer": "LSTM",
+      "elements": 3168
+    },
+    {
+      "array": "lstm_weight_hh",
+      "layer": "LSTM",
+      "elements": 2304
+    },
+    {
+      "array": "lstm_bias_ih",
+      "layer": "LSTM",
+      "elements": 96
+    },
+    {
+      "array": "lstm_bias_hh",
+      "layer": "LSTM",
+      "elements": 96
+    },
+    {
+      "array": "router_fc1_weight",
+      "layer": "Router",
+      "elements": 432
+    },
+    {
+      "array": "router_fc1_bias",
+      "layer": "Router",
+      "elements": 12
+    },
+    {
+      "array": "router_fc2_weight",
+      "layer": "Router",
+      "elements": 24
+    },
+    {
+      "array": "router_fc2_bias",
+      "layer": "Router",
+      "elements": 2
+    },
+    {
+      "array": "fusion_weight",
+      "layer": "Fusion",
+      "elements": 864
+    },
+    {
+      "array": "fusion_bias",
+      "layer": "Fusion",
+      "elements": 24
+    },
+    {
+      "array": "fc1_weight",
+      "layer": "FC1",
+      "elements": 288
+    },
+    {
+      "array": "fc1_bias",
+      "layer": "FC1",
+      "elements": 12
+    },
+    {
+      "array": "fc2_weight",
+      "layer": "Output",
+      "elements": 60
+    },
+    {
+      "array": "fc2_bias",
+      "layer": "Output",
+      "elements": 5
+    }
+  ]
+}
