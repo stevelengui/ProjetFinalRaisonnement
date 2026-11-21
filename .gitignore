@@ -1,32 +1,22 @@
+# Compiled binaries
+tests/host/main_host
+*.o
+*.elf
+*.bin
+
+# Large model files
+tests/oracle/*.pth
+
+# Windows metadata
+*.Zone.Identifier
+
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+*.pyc
+.pytest_cache/
+
+# Virtual env
 venv/
-env/
-ENV/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Backups
-*.bak
-*.bak.*
-*.orig
-
-# Logs
-*.log
-
-# Dossiers générés
+# Generated
 generated_projects/
-artifacts/generated_code/test_inference
-artifacts/generated_code/test_inference_riscv
