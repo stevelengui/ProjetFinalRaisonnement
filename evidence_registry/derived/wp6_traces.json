@@ -1,0 +1,1316 @@
+[
+  {
+    "case_id": "missing_evidence",
+    "expected": "DEFER",
+    "actual": "UNKNOWN",
+    "status": "CHECK",
+    "decision": {
+      "state": {
+        "state_id": "state_20261121_125304",
+        "timestamp": "2026-11-21T12:53:04.309503",
+        "contract": {
+          "context_id": "ctx_medical_125304",
+          "primary_objective": "maximize_accuracy",
+          "hard_constraints": {
+            "latency_ms": 20.0,
+            "memory_kb": 512.0,
+            "accuracy": 0.95,
+            "delta_t_max_c": 5.0
+          },
+          "soft_constraints": {
+            "energy_mj": 5.0
+          },
+          "feasibility_status": "UNKNOWN",
+          "version": 1
+        },
+        "candidates": [
+          {
+            "design_id": "ecg_hybrid_8bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 8,
+              "parameters": 7651,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.961,
+              "latency_ms": 8.2,
+              "energy_mj": 2.8,
+              "power_mw": 28.0,
+              "memory_kb": 29.0,
+              "M_weights_kib": 7.47,
+              "explainability_score": 0.91,
+              "reliability": 0.92,
+              "robustness": 0.88,
+              "f1_score": 0.951
+            },
+            "feasibility": "PASS",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_hybrid_4bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 4,
+              "parameters": 3826,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.948,
+              "latency_ms": 6.2,
+              "energy_mj": 1.9,
+              "power_mw": 19.0,
+              "memory_kb": 14.5,
+              "M_weights_kib": 3.74,
+              "explainability_score": 0.89,
+              "reliability": 0.88,
+              "robustness": 0.85,
+              "f1_score": 0.942
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_snn_2bit",
+            "parameters": {
+              "model_type": "snn",
+              "quantization_bits": 2,
+              "parameters": 1913,
+              "operations": 186564
+            },
+            "metrics": {
+              "accuracy": 0.92,
+              "latency_ms": 12.4,
+              "energy_mj": 0.8,
+              "power_mw": 8.0,
+              "memory_kb": 7.3,
+              "M_weights_kib": 1.87,
+              "explainability_score": 0.82,
+              "reliability": 0.78,
+              "robustness": 0.72,
+              "f1_score": 0.91
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          }
+        ],
+        "evidence": {
+          "evidence_ids": [
+            "lat_ecg_hybrid_8bit",
+            "mem_ecg_hybrid_8bit",
+            "acc_ecg_hybrid_8bit",
+            "lat_ecg_hybrid_4bit",
+            "mem_ecg_hybrid_4bit",
+            "acc_ecg_hybrid_4bit",
+            "lat_ecg_snn_2bit",
+            "mem_ecg_snn_2bit",
+            "acc_ecg_snn_2bit"
+          ],
+          "by_type": {
+            "latency": [
+              "lat_ecg_hybrid_8bit",
+              "lat_ecg_hybrid_4bit",
+              "lat_ecg_snn_2bit"
+            ],
+            "memory": [
+              "mem_ecg_hybrid_8bit",
+              "mem_ecg_hybrid_4bit",
+              "mem_ecg_snn_2bit"
+            ],
+            "accuracy": [
+              "acc_ecg_hybrid_8bit",
+              "acc_ecg_hybrid_4bit",
+              "acc_ecg_snn_2bit"
+            ]
+          },
+          "coverage_score": 1.0
+        },
+        "uncertainty": {
+          "per_metric": {},
+          "overall": 0.0,
+          "escalation_level": "none",
+          "unresolved_conflicts": []
+        },
+        "residual_risk": {
+          "per_constraint": {},
+          "overall": 0.0,
+          "acceptable": false,
+          "threshold": 0.1
+        },
+        "budget": {
+          "compute_budget": 1.0,
+          "time_budget_s": 3600.0,
+          "eval_budget": 100,
+          "evals_used": 0,
+          "evals_remaining": 100
+        },
+        "history": [],
+        "phase": "INITIALIZED",
+        "decision": "ACCEPT"
+      },
+      "feasibility": {
+        "overall": "FAIL",
+        "is_feasible": false,
+        "counts": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        },
+        "checks": [
+          {
+            "name": "ecg_hybrid_8bit_latency",
+            "state": "PASS",
+            "value": 8.2,
+            "threshold": 20.0,
+            "reason": "8.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_memory",
+            "state": "PASS",
+            "value": 29.0,
+            "threshold": 512.0,
+            "reason": "29.00 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_accuracy",
+            "state": "PASS",
+            "value": 0.961,
+            "threshold": 0.95,
+            "reason": "0.96 \u2265 0.95"
+          },
+          {
+            "name": "ecg_hybrid_4bit_latency",
+            "state": "PASS",
+            "value": 6.2,
+            "threshold": 20.0,
+            "reason": "6.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_memory",
+            "state": "PASS",
+            "value": 14.5,
+            "threshold": 512.0,
+            "reason": "14.50 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_accuracy",
+            "state": "FAIL",
+            "value": 0.948,
+            "threshold": 0.95,
+            "reason": "0.95 < 0.95"
+          },
+          {
+            "name": "ecg_snn_2bit_latency",
+            "state": "PASS",
+            "value": 12.4,
+            "threshold": 20.0,
+            "reason": "12.40 \u2264 20.00"
+          },
+          {
+            "name": "ecg_snn_2bit_memory",
+            "state": "PASS",
+            "value": 7.3,
+            "threshold": 512.0,
+            "reason": "7.30 \u2264 512.00"
+          },
+          {
+            "name": "ecg_snn_2bit_accuracy",
+            "state": "FAIL",
+            "value": 0.92,
+            "threshold": 0.95,
+            "reason": "0.92 < 0.95"
+          }
+        ]
+      },
+      "decision": {
+        "decision": "ACCEPT",
+        "selected_design_id": "ecg_hybrid_8bit",
+        "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+        "n_feasible": 1,
+        "n_unknown": 0,
+        "feasibility_summary": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        }
+      },
+      "action_history": [
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_8bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.309580"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_4bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_4bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.309607"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_snn_2bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_snn_2bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.309619"
+        },
+        {
+          "category": "decision",
+          "name": "accept",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "conditions": []
+          },
+          "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+          "expected_cost": 0.0,
+          "expected_time_s": 0.0,
+          "timestamp": "2026-11-21T12:53:04.310017"
+        }
+      ],
+      "transition_history": []
+    }
+  },
+  {
+    "case_id": "contradictory_evidence",
+    "expected": "CONFLICT_RESOLVED",
+    "actual": "UNKNOWN",
+    "status": "CHECK",
+    "decision": {
+      "state": {
+        "state_id": "state_20261121_125304",
+        "timestamp": "2026-11-21T12:53:04.310753",
+        "contract": {
+          "context_id": "ctx_medical_125304",
+          "primary_objective": "maximize_accuracy",
+          "hard_constraints": {
+            "latency_ms": 20.0,
+            "memory_kb": 512.0,
+            "accuracy": 0.95,
+            "delta_t_max_c": 5.0
+          },
+          "soft_constraints": {
+            "energy_mj": 5.0
+          },
+          "feasibility_status": "UNKNOWN",
+          "version": 1
+        },
+        "candidates": [
+          {
+            "design_id": "ecg_hybrid_8bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 8,
+              "parameters": 7651,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.961,
+              "latency_ms": 8.2,
+              "energy_mj": 2.8,
+              "power_mw": 28.0,
+              "memory_kb": 29.0,
+              "M_weights_kib": 7.47,
+              "explainability_score": 0.91,
+              "reliability": 0.92,
+              "robustness": 0.88,
+              "f1_score": 0.951
+            },
+            "feasibility": "PASS",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_hybrid_4bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 4,
+              "parameters": 3826,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.948,
+              "latency_ms": 6.2,
+              "energy_mj": 1.9,
+              "power_mw": 19.0,
+              "memory_kb": 14.5,
+              "M_weights_kib": 3.74,
+              "explainability_score": 0.89,
+              "reliability": 0.88,
+              "robustness": 0.85,
+              "f1_score": 0.942
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_snn_2bit",
+            "parameters": {
+              "model_type": "snn",
+              "quantization_bits": 2,
+              "parameters": 1913,
+              "operations": 186564
+            },
+            "metrics": {
+              "accuracy": 0.92,
+              "latency_ms": 12.4,
+              "energy_mj": 0.8,
+              "power_mw": 8.0,
+              "memory_kb": 7.3,
+              "M_weights_kib": 1.87,
+              "explainability_score": 0.82,
+              "reliability": 0.78,
+              "robustness": 0.72,
+              "f1_score": 0.91
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          }
+        ],
+        "evidence": {
+          "evidence_ids": [
+            "lat_ecg_hybrid_8bit",
+            "mem_ecg_hybrid_8bit",
+            "acc_ecg_hybrid_8bit",
+            "lat_ecg_hybrid_4bit",
+            "mem_ecg_hybrid_4bit",
+            "acc_ecg_hybrid_4bit",
+            "lat_ecg_snn_2bit",
+            "mem_ecg_snn_2bit",
+            "acc_ecg_snn_2bit"
+          ],
+          "by_type": {
+            "latency": [
+              "lat_ecg_hybrid_8bit",
+              "lat_ecg_hybrid_4bit",
+              "lat_ecg_snn_2bit"
+            ],
+            "memory": [
+              "mem_ecg_hybrid_8bit",
+              "mem_ecg_hybrid_4bit",
+              "mem_ecg_snn_2bit"
+            ],
+            "accuracy": [
+              "acc_ecg_hybrid_8bit",
+              "acc_ecg_hybrid_4bit",
+              "acc_ecg_snn_2bit"
+            ]
+          },
+          "coverage_score": 1.0
+        },
+        "uncertainty": {
+          "per_metric": {},
+          "overall": 0.0,
+          "escalation_level": "none",
+          "unresolved_conflicts": []
+        },
+        "residual_risk": {
+          "per_constraint": {},
+          "overall": 0.0,
+          "acceptable": false,
+          "threshold": 0.1
+        },
+        "budget": {
+          "compute_budget": 1.0,
+          "time_budget_s": 3600.0,
+          "eval_budget": 100,
+          "evals_used": 0,
+          "evals_remaining": 100
+        },
+        "history": [],
+        "phase": "INITIALIZED",
+        "decision": "ACCEPT"
+      },
+      "feasibility": {
+        "overall": "FAIL",
+        "is_feasible": false,
+        "counts": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        },
+        "checks": [
+          {
+            "name": "ecg_hybrid_8bit_latency",
+            "state": "PASS",
+            "value": 8.2,
+            "threshold": 20.0,
+            "reason": "8.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_memory",
+            "state": "PASS",
+            "value": 29.0,
+            "threshold": 512.0,
+            "reason": "29.00 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_accuracy",
+            "state": "PASS",
+            "value": 0.961,
+            "threshold": 0.95,
+            "reason": "0.96 \u2265 0.95"
+          },
+          {
+            "name": "ecg_hybrid_4bit_latency",
+            "state": "PASS",
+            "value": 6.2,
+            "threshold": 20.0,
+            "reason": "6.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_memory",
+            "state": "PASS",
+            "value": 14.5,
+            "threshold": 512.0,
+            "reason": "14.50 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_accuracy",
+            "state": "FAIL",
+            "value": 0.948,
+            "threshold": 0.95,
+            "reason": "0.95 < 0.95"
+          },
+          {
+            "name": "ecg_snn_2bit_latency",
+            "state": "PASS",
+            "value": 12.4,
+            "threshold": 20.0,
+            "reason": "12.40 \u2264 20.00"
+          },
+          {
+            "name": "ecg_snn_2bit_memory",
+            "state": "PASS",
+            "value": 7.3,
+            "threshold": 512.0,
+            "reason": "7.30 \u2264 512.00"
+          },
+          {
+            "name": "ecg_snn_2bit_accuracy",
+            "state": "FAIL",
+            "value": 0.92,
+            "threshold": 0.95,
+            "reason": "0.92 < 0.95"
+          }
+        ]
+      },
+      "decision": {
+        "decision": "ACCEPT",
+        "selected_design_id": "ecg_hybrid_8bit",
+        "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+        "n_feasible": 1,
+        "n_unknown": 0,
+        "feasibility_summary": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        }
+      },
+      "action_history": [
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_8bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.310792"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_4bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_4bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.310811"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_snn_2bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_snn_2bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.310821"
+        },
+        {
+          "category": "decision",
+          "name": "accept",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "conditions": []
+          },
+          "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+          "expected_cost": 0.0,
+          "expected_time_s": 0.0,
+          "timestamp": "2026-11-21T12:53:04.311030"
+        }
+      ],
+      "transition_history": []
+    }
+  },
+  {
+    "case_id": "hard_security_failure",
+    "expected": "REJECT",
+    "actual": "UNKNOWN",
+    "status": "CHECK",
+    "decision": {
+      "state": {
+        "state_id": "state_20261121_125304",
+        "timestamp": "2026-11-21T12:53:04.311582",
+        "contract": {
+          "context_id": "ctx_medical_125304",
+          "primary_objective": "maximize_accuracy",
+          "hard_constraints": {
+            "latency_ms": 20.0,
+            "memory_kb": 512.0,
+            "accuracy": 0.95,
+            "delta_t_max_c": 5.0
+          },
+          "soft_constraints": {
+            "energy_mj": 5.0
+          },
+          "feasibility_status": "UNKNOWN",
+          "version": 1
+        },
+        "candidates": [
+          {
+            "design_id": "ecg_hybrid_8bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 8,
+              "parameters": 7651,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.961,
+              "latency_ms": 8.2,
+              "energy_mj": 2.8,
+              "power_mw": 28.0,
+              "memory_kb": 29.0,
+              "M_weights_kib": 7.47,
+              "explainability_score": 0.91,
+              "reliability": 0.92,
+              "robustness": 0.88,
+              "f1_score": 0.951
+            },
+            "feasibility": "PASS",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_hybrid_4bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 4,
+              "parameters": 3826,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.948,
+              "latency_ms": 6.2,
+              "energy_mj": 1.9,
+              "power_mw": 19.0,
+              "memory_kb": 14.5,
+              "M_weights_kib": 3.74,
+              "explainability_score": 0.89,
+              "reliability": 0.88,
+              "robustness": 0.85,
+              "f1_score": 0.942
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_snn_2bit",
+            "parameters": {
+              "model_type": "snn",
+              "quantization_bits": 2,
+              "parameters": 1913,
+              "operations": 186564
+            },
+            "metrics": {
+              "accuracy": 0.92,
+              "latency_ms": 12.4,
+              "energy_mj": 0.8,
+              "power_mw": 8.0,
+              "memory_kb": 7.3,
+              "M_weights_kib": 1.87,
+              "explainability_score": 0.82,
+              "reliability": 0.78,
+              "robustness": 0.72,
+              "f1_score": 0.91
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          }
+        ],
+        "evidence": {
+          "evidence_ids": [
+            "lat_ecg_hybrid_8bit",
+            "mem_ecg_hybrid_8bit",
+            "acc_ecg_hybrid_8bit",
+            "lat_ecg_hybrid_4bit",
+            "mem_ecg_hybrid_4bit",
+            "acc_ecg_hybrid_4bit",
+            "lat_ecg_snn_2bit",
+            "mem_ecg_snn_2bit",
+            "acc_ecg_snn_2bit"
+          ],
+          "by_type": {
+            "latency": [
+              "lat_ecg_hybrid_8bit",
+              "lat_ecg_hybrid_4bit",
+              "lat_ecg_snn_2bit"
+            ],
+            "memory": [
+              "mem_ecg_hybrid_8bit",
+              "mem_ecg_hybrid_4bit",
+              "mem_ecg_snn_2bit"
+            ],
+            "accuracy": [
+              "acc_ecg_hybrid_8bit",
+              "acc_ecg_hybrid_4bit",
+              "acc_ecg_snn_2bit"
+            ]
+          },
+          "coverage_score": 1.0
+        },
+        "uncertainty": {
+          "per_metric": {},
+          "overall": 0.0,
+          "escalation_level": "none",
+          "unresolved_conflicts": []
+        },
+        "residual_risk": {
+          "per_constraint": {},
+          "overall": 0.0,
+          "acceptable": false,
+          "threshold": 0.1
+        },
+        "budget": {
+          "compute_budget": 1.0,
+          "time_budget_s": 3600.0,
+          "eval_budget": 100,
+          "evals_used": 0,
+          "evals_remaining": 100
+        },
+        "history": [],
+        "phase": "INITIALIZED",
+        "decision": "ACCEPT"
+      },
+      "feasibility": {
+        "overall": "FAIL",
+        "is_feasible": false,
+        "counts": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        },
+        "checks": [
+          {
+            "name": "ecg_hybrid_8bit_latency",
+            "state": "PASS",
+            "value": 8.2,
+            "threshold": 20.0,
+            "reason": "8.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_memory",
+            "state": "PASS",
+            "value": 29.0,
+            "threshold": 512.0,
+            "reason": "29.00 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_accuracy",
+            "state": "PASS",
+            "value": 0.961,
+            "threshold": 0.95,
+            "reason": "0.96 \u2265 0.95"
+          },
+          {
+            "name": "ecg_hybrid_4bit_latency",
+            "state": "PASS",
+            "value": 6.2,
+            "threshold": 20.0,
+            "reason": "6.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_memory",
+            "state": "PASS",
+            "value": 14.5,
+            "threshold": 512.0,
+            "reason": "14.50 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_accuracy",
+            "state": "FAIL",
+            "value": 0.948,
+            "threshold": 0.95,
+            "reason": "0.95 < 0.95"
+          },
+          {
+            "name": "ecg_snn_2bit_latency",
+            "state": "PASS",
+            "value": 12.4,
+            "threshold": 20.0,
+            "reason": "12.40 \u2264 20.00"
+          },
+          {
+            "name": "ecg_snn_2bit_memory",
+            "state": "PASS",
+            "value": 7.3,
+            "threshold": 512.0,
+            "reason": "7.30 \u2264 512.00"
+          },
+          {
+            "name": "ecg_snn_2bit_accuracy",
+            "state": "FAIL",
+            "value": 0.92,
+            "threshold": 0.95,
+            "reason": "0.92 < 0.95"
+          }
+        ]
+      },
+      "decision": {
+        "decision": "ACCEPT",
+        "selected_design_id": "ecg_hybrid_8bit",
+        "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+        "n_feasible": 1,
+        "n_unknown": 0,
+        "feasibility_summary": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        }
+      },
+      "action_history": [
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_8bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.311638"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_4bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_4bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.311669"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_snn_2bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_snn_2bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.311680"
+        },
+        {
+          "category": "decision",
+          "name": "accept",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "conditions": []
+          },
+          "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+          "expected_cost": 0.0,
+          "expected_time_s": 0.0,
+          "timestamp": "2026-11-21T12:53:04.311835"
+        }
+      ],
+      "transition_history": []
+    }
+  },
+  {
+    "case_id": "lifecycle_drift",
+    "expected": "ADAPT",
+    "actual": "UNKNOWN",
+    "status": "CHECK",
+    "decision": {
+      "state": {
+        "state_id": "state_20261121_125304",
+        "timestamp": "2026-11-21T12:53:04.312360",
+        "contract": {
+          "context_id": "ctx_industrial_125304",
+          "primary_objective": "minimize_latency",
+          "hard_constraints": {
+            "latency_ms": 15.0,
+            "memory_kb": 256.0,
+            "accuracy": 0.93,
+            "delta_t_max_c": 7.0
+          },
+          "soft_constraints": {},
+          "feasibility_status": "UNKNOWN",
+          "version": 1
+        },
+        "candidates": [
+          {
+            "design_id": "vibration_hybrid_8bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 8,
+              "parameters": 12450,
+              "operations": 485000
+            },
+            "metrics": {
+              "accuracy": 0.958,
+              "latency_ms": 6.8,
+              "energy_mj": 2.2,
+              "power_mw": 22.0,
+              "memory_kb": 38.0,
+              "M_weights_kib": 12.16,
+              "explainability_score": 0.88,
+              "reliability": 0.9,
+              "robustness": 0.86,
+              "f1_score": 0.952
+            },
+            "feasibility": "PASS",
+            "selected": false
+          }
+        ],
+        "evidence": {
+          "evidence_ids": [
+            "lat_vibration_hybrid_8bit",
+            "mem_vibration_hybrid_8bit",
+            "acc_vibration_hybrid_8bit"
+          ],
+          "by_type": {
+            "latency": [
+              "lat_vibration_hybrid_8bit"
+            ],
+            "memory": [
+              "mem_vibration_hybrid_8bit"
+            ],
+            "accuracy": [
+              "acc_vibration_hybrid_8bit"
+            ]
+          },
+          "coverage_score": 1.0
+        },
+        "uncertainty": {
+          "per_metric": {},
+          "overall": 0.0,
+          "escalation_level": "none",
+          "unresolved_conflicts": []
+        },
+        "residual_risk": {
+          "per_constraint": {},
+          "overall": 0.0,
+          "acceptable": false,
+          "threshold": 0.1
+        },
+        "budget": {
+          "compute_budget": 1.0,
+          "time_budget_s": 3600.0,
+          "eval_budget": 100,
+          "evals_used": 0,
+          "evals_remaining": 100
+        },
+        "history": [],
+        "phase": "INITIALIZED",
+        "decision": "ACCEPT"
+      },
+      "feasibility": {
+        "overall": "PASS",
+        "is_feasible": true,
+        "counts": {
+          "PASS": 3,
+          "FAIL": 0,
+          "UNKNOWN": 0
+        },
+        "checks": [
+          {
+            "name": "vibration_hybrid_8bit_latency",
+            "state": "PASS",
+            "value": 6.8,
+            "threshold": 15.0,
+            "reason": "6.80 \u2264 15.00"
+          },
+          {
+            "name": "vibration_hybrid_8bit_memory",
+            "state": "PASS",
+            "value": 38.0,
+            "threshold": 256.0,
+            "reason": "38.00 \u2264 256.00"
+          },
+          {
+            "name": "vibration_hybrid_8bit_accuracy",
+            "state": "PASS",
+            "value": 0.958,
+            "threshold": 0.93,
+            "reason": "0.96 \u2265 0.93"
+          }
+        ]
+      },
+      "decision": {
+        "decision": "ACCEPT",
+        "selected_design_id": "vibration_hybrid_8bit",
+        "rationale": "Meilleur compromis: accuracy=0.958, latency=6.8ms",
+        "n_feasible": 1,
+        "n_unknown": 0,
+        "feasibility_summary": {
+          "PASS": 3,
+          "FAIL": 0,
+          "UNKNOWN": 0
+        }
+      },
+      "action_history": [
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "vibration_hybrid_8bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour vibration_hybrid_8bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.312388"
+        },
+        {
+          "category": "decision",
+          "name": "accept",
+          "params": {
+            "design_id": "vibration_hybrid_8bit",
+            "conditions": []
+          },
+          "rationale": "Meilleur compromis: accuracy=0.958, latency=6.8ms",
+          "expected_cost": 0.0,
+          "expected_time_s": 0.0,
+          "timestamp": "2026-11-21T12:53:04.312476"
+        }
+      ],
+      "transition_history": []
+    }
+  },
+  {
+    "case_id": "resource_infeasibility",
+    "expected": "REJECT",
+    "actual": "UNKNOWN",
+    "status": "CHECK",
+    "decision": {
+      "state": {
+        "state_id": "state_20261121_125304",
+        "timestamp": "2026-11-21T12:53:04.312829",
+        "contract": {
+          "context_id": "ctx_medical_125304",
+          "primary_objective": "maximize_accuracy",
+          "hard_constraints": {
+            "latency_ms": 20.0,
+            "memory_kb": 512.0,
+            "accuracy": 0.95,
+            "delta_t_max_c": 5.0
+          },
+          "soft_constraints": {
+            "energy_mj": 5.0
+          },
+          "feasibility_status": "UNKNOWN",
+          "version": 1
+        },
+        "candidates": [
+          {
+            "design_id": "ecg_hybrid_8bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 8,
+              "parameters": 7651,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.961,
+              "latency_ms": 8.2,
+              "energy_mj": 2.8,
+              "power_mw": 28.0,
+              "memory_kb": 29.0,
+              "M_weights_kib": 7.47,
+              "explainability_score": 0.91,
+              "reliability": 0.92,
+              "robustness": 0.88,
+              "f1_score": 0.951
+            },
+            "feasibility": "PASS",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_hybrid_4bit",
+            "parameters": {
+              "model_type": "hybrid",
+              "quantization_bits": 4,
+              "parameters": 3826,
+              "operations": 373128
+            },
+            "metrics": {
+              "accuracy": 0.948,
+              "latency_ms": 6.2,
+              "energy_mj": 1.9,
+              "power_mw": 19.0,
+              "memory_kb": 14.5,
+              "M_weights_kib": 3.74,
+              "explainability_score": 0.89,
+              "reliability": 0.88,
+              "robustness": 0.85,
+              "f1_score": 0.942
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          },
+          {
+            "design_id": "ecg_snn_2bit",
+            "parameters": {
+              "model_type": "snn",
+              "quantization_bits": 2,
+              "parameters": 1913,
+              "operations": 186564
+            },
+            "metrics": {
+              "accuracy": 0.92,
+              "latency_ms": 12.4,
+              "energy_mj": 0.8,
+              "power_mw": 8.0,
+              "memory_kb": 7.3,
+              "M_weights_kib": 1.87,
+              "explainability_score": 0.82,
+              "reliability": 0.78,
+              "robustness": 0.72,
+              "f1_score": 0.91
+            },
+            "feasibility": "FAIL",
+            "selected": false
+          }
+        ],
+        "evidence": {
+          "evidence_ids": [
+            "lat_ecg_hybrid_8bit",
+            "mem_ecg_hybrid_8bit",
+            "acc_ecg_hybrid_8bit",
+            "lat_ecg_hybrid_4bit",
+            "mem_ecg_hybrid_4bit",
+            "acc_ecg_hybrid_4bit",
+            "lat_ecg_snn_2bit",
+            "mem_ecg_snn_2bit",
+            "acc_ecg_snn_2bit"
+          ],
+          "by_type": {
+            "latency": [
+              "lat_ecg_hybrid_8bit",
+              "lat_ecg_hybrid_4bit",
+              "lat_ecg_snn_2bit"
+            ],
+            "memory": [
+              "mem_ecg_hybrid_8bit",
+              "mem_ecg_hybrid_4bit",
+              "mem_ecg_snn_2bit"
+            ],
+            "accuracy": [
+              "acc_ecg_hybrid_8bit",
+              "acc_ecg_hybrid_4bit",
+              "acc_ecg_snn_2bit"
+            ]
+          },
+          "coverage_score": 1.0
+        },
+        "uncertainty": {
+          "per_metric": {},
+          "overall": 0.0,
+          "escalation_level": "none",
+          "unresolved_conflicts": []
+        },
+        "residual_risk": {
+          "per_constraint": {},
+          "overall": 0.0,
+          "acceptable": false,
+          "threshold": 0.1
+        },
+        "budget": {
+          "compute_budget": 1.0,
+          "time_budget_s": 3600.0,
+          "eval_budget": 100,
+          "evals_used": 0,
+          "evals_remaining": 100
+        },
+        "history": [],
+        "phase": "INITIALIZED",
+        "decision": "ACCEPT"
+      },
+      "feasibility": {
+        "overall": "FAIL",
+        "is_feasible": false,
+        "counts": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        },
+        "checks": [
+          {
+            "name": "ecg_hybrid_8bit_latency",
+            "state": "PASS",
+            "value": 8.2,
+            "threshold": 20.0,
+            "reason": "8.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_memory",
+            "state": "PASS",
+            "value": 29.0,
+            "threshold": 512.0,
+            "reason": "29.00 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_8bit_accuracy",
+            "state": "PASS",
+            "value": 0.961,
+            "threshold": 0.95,
+            "reason": "0.96 \u2265 0.95"
+          },
+          {
+            "name": "ecg_hybrid_4bit_latency",
+            "state": "PASS",
+            "value": 6.2,
+            "threshold": 20.0,
+            "reason": "6.20 \u2264 20.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_memory",
+            "state": "PASS",
+            "value": 14.5,
+            "threshold": 512.0,
+            "reason": "14.50 \u2264 512.00"
+          },
+          {
+            "name": "ecg_hybrid_4bit_accuracy",
+            "state": "FAIL",
+            "value": 0.948,
+            "threshold": 0.95,
+            "reason": "0.95 < 0.95"
+          },
+          {
+            "name": "ecg_snn_2bit_latency",
+            "state": "PASS",
+            "value": 12.4,
+            "threshold": 20.0,
+            "reason": "12.40 \u2264 20.00"
+          },
+          {
+            "name": "ecg_snn_2bit_memory",
+            "state": "PASS",
+            "value": 7.3,
+            "threshold": 512.0,
+            "reason": "7.30 \u2264 512.00"
+          },
+          {
+            "name": "ecg_snn_2bit_accuracy",
+            "state": "FAIL",
+            "value": 0.92,
+            "threshold": 0.95,
+            "reason": "0.92 < 0.95"
+          }
+        ]
+      },
+      "decision": {
+        "decision": "ACCEPT",
+        "selected_design_id": "ecg_hybrid_8bit",
+        "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+        "n_feasible": 1,
+        "n_unknown": 0,
+        "feasibility_summary": {
+          "PASS": 7,
+          "FAIL": 2,
+          "UNKNOWN": 0
+        }
+      },
+      "action_history": [
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_8bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.312859"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_hybrid_4bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_hybrid_4bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.312876"
+        },
+        {
+          "category": "evidence",
+          "name": "eval_low_fidelity",
+          "params": {
+            "design_id": "ecg_snn_2bit",
+            "fidelity": "F1"
+          },
+          "rationale": "\u00c9valuation initiale pour ecg_snn_2bit",
+          "expected_cost": 0.01,
+          "expected_time_s": 0.1,
+          "timestamp": "2026-11-21T12:53:04.312886"
+        },
+        {
+          "category": "decision",
+          "name": "accept",
+          "params": {
+            "design_id": "ecg_hybrid_8bit",
+            "conditions": []
+          },
+          "rationale": "Meilleur compromis: accuracy=0.961, latency=8.2ms",
+          "expected_cost": 0.0,
+          "expected_time_s": 0.0,
+          "timestamp": "2026-11-21T12:53:04.313088"
+        }
+      ],
+      "transition_history": []
+    }
+  }
+]
