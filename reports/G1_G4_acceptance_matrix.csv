@@ -1,0 +1,28 @@
+gate,criterion,status,evidence,wp
+G1,Parameters reconciled (7,651 = 18 arrays),PASS,reports/WP1_reconciliation.md,WP1
+G1,Manuscript 9,317 explained (3 layer errors),PASS,reports/WP1_reconciliation.md,WP1
+G1,Operations reconciled (373,128 MACs),PASS,reports/WP1_reconciliation.md,WP1
+G1,Memory partially reconciled (weights 7.47 KiB, struct 10.767 KiB),PARTIAL,reports/WP1_reconciliation.md,WP1
+G1,Memory Table I vs VI-A (29.0 vs 31.0 KiB),UNVERIFIED,reports/WP1_reconciliation.md,WP1
+G2,Real input-dependent C inference,PASS,tests/host/main_host,WP2
+G2,C vs Python C-faithful exact match (0 gap),PASS,tests/compare_c_python.py,WP2
+G2,C vs PyTorch divergence documented (100% gap),FAIL (documented),reports/WP2_validation.md,WP2
+G2,Hard-coded PASS removed,PASS,tests/compare_c_python.py,WP2
+G2,Negative controls pass,PASS,tests/negative_controls.py,WP2
+G2,RISC-V build complete,PASS,build/firmware.elf,WP4
+G2,RISC-V weights linked in ELF,PASS,nm output in reports/WP4_riscv.md,WP4
+G2,RISC-V execution in QEMU with logits,PASS,evidence_registry/derived/qemu_riscv_output.txt,WP4
+G2,Physical validation,NOT PERFORMED,No hardware board,WP4
+G3,Raw JSON frozen with SHA-256,PASS,evidence_registry/raw_manifest.csv,WP3
+G3,Claim registry complete (20 claims),PASS,reports/E0_E7_claim_registry.csv,WP3
+G3,E4 DS04 resolved (D1_light),PASS (documented),reports/WP3_experiment_audit.md,WP3
+G3,E6 resolved (overall 0.985, CF 1.0, 7/9 tests),PASS (documented),reports/WP3_experiment_audit.md,WP3
+G3,E7 resolved (DCR 0.8333, Overall 0.9395),PASS (documented),reports/WP3_experiment_audit.md,WP3
+G3,Meta-controller executable,PASS,tests/wp6_operational/run_wp6_tests.py,WP6
+G3,Tri-state logic (UNKNOWN never PASS),PASS,meta_reasoning/tri_state_logic.py,WP6
+G3,Deterministic traces (5 cases),PASS,evidence_registry/derived/wp6_traces.json,WP6
+G4,Each hardware metric classified (MEAS/SIM/ANA/DER),PASS,reports/WP5_evidence_classification.csv,WP5
+G4,Weights and ops verified (DER),PASS,reports/WP5_evidence_classification.csv,WP5
+G4,Latency/energy/TOPS-W labeled as ANA,UNVERIFIED,reports/WP5_evidence_classification.csv,WP5
+G4,No unsupported cycle-accurate claims,PASS,reports/WP5_hardware_performance.md,WP5
+G4,No unsupported physical validation claims,PASS,reports/WP5_hardware_performance.md,WP5
