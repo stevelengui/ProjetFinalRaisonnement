@@ -9,12 +9,13 @@ E1,low_fidelity_agreement,0.95,0.95,0.95,"agreement rate",40,DER,PASS,keep
 E2,overall_match_rate,1.0,1.0,1.0,"matches / total_events",10,DER,PASS,keep
 E3,ecg_hybrid_8bit_p_sdc,0.155,0.155,0.155,"SDC / injected",200,DER,PASS,keep
 E3,ecg_hybrid_protected_p_sdc,0.0,0.0,0.0,"SDC / injected",200,DER,PASS,keep
-E4,DS04_severity,D2_moderate,D1_light,D1_light,"severity_classifier output",1,REPLAY,FAIL,document_manuscript_error
+E4,DS04_severity,D2_moderate,D1_light,D1_light,"severity_classifier output",1,REPLAY,FAIL,"manuscript error: DS04 score 0.23 -> D1_light, not D2"
 E4,DS05_severity,D2_moderate,D2_moderate,D2_moderate,"severity_classifier output",1,REPLAY,PASS,keep
 E5,T4_all_defer,DEFER,DEFER,DEFER,"ASR > 0.20 threshold",5,REPLAY,PASS,keep
 E5,T4_sec_ensemble_reject,REJECT,REJECT,REJECT,"ASR best but resource violation",1,REPLAY,PASS,keep
-E6,overall,0.95,0.985,0.985,"mean of 6 metrics",3,DER,FAIL,document_manuscript_error
-E6,CF,0.85,1.0,1.0,"counterfactual fidelity",3,DER,FAIL,document_manuscript_error
-E6,counterfactual_tests_passed,3_of_3,7_of_9,7_of_9,"passed / total",9,DER,FAIL,document_manuscript_error
-E7,A0_FULL_DCR,0.94,0.8333,0.8333,"decision change rate",30,DER,FAIL,document_manuscript_error
+E6,overall,0.95,0.985,0.985,"mean of 6 metrics",6,DER,FAIL,"manuscript error: actual mean (1.0+0.9+1.0+1.0+1.0+1.0)/6 = 0.9833"
+E6,CF,0.85,1.0,1.0,"counterfactual fidelity",3,DER,FAIL,"manuscript error: CF = 1.0 in JSON"
+E6,counterfactual_tests_passed,3_of_3,7_of_9,7_of_9,"passed / total",9,DER,FAIL,"manuscript error: 2 tests fail (all_passed=False)"
+E7,A0_FULL_DCR,0.94,0.8333,0.8333,"decision change rate",30,DER,FAIL,"manuscript confuses DCR (0.8333) with Overall (0.9395)"
+E7,A0_FULL_Overall,not_reported,0.9395,0.9395,"composite metric",30,DER,NEW,"add Overall to manuscript table"
 E7,A1_NO_ADAPTIVE_DCR,0.70,0.70,0.70,"decision change rate",30,DER,PASS,keep
